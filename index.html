@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprende y Genera — Cursos digitales para emprender desde casa</title>
+<meta name="description" content="Aprende habilidades reales y genera ingresos propios desde casa. Cursos digitales para mujeres emprendedoras en Latinoamérica.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#0D0B14;
+  --dark2:#1A1628;
+  --purple:#2D1B45;
+  --rose:#E890BE;
+  --rose-dark:#B5357A;
+  --gold:#D4A843;
+  --cream:#FAF0F5;
+  --text-muted:rgba(250,240,245,0.55);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream);overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(13,11,20,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(232,144,190,0.1);
+  padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;color:var(--cream);font-weight:700;
+  text-decoration:none;
+}
+.nav-logo span{color:var(--rose)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--rose-dark),#D4608E);
+  color:#fff;font-weight:700;font-size:0.85rem;
+  padding:8px 20px;border-radius:100px;
+  text-decoration:none;transition:opacity 0.2s;
+}
+.nav-cta:hover{opacity:0.9}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:7rem 1.5rem 4rem;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(181,53,122,0.2) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(100,40,160,0.15) 0%, transparent 50%),
+    var(--dark);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(232,144,190,0.08) 1px, transparent 1px);
+  background-size:40px 40px;
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,144,190,0.1);
+  border:1px solid rgba(232,144,190,0.25);
+  color:var(--rose);
+  padding:7px 18px;border-radius:100px;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.hero-badge span{width:6px;height:6px;background:var(--rose);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,5vw,4rem);
+  color:var(--cream);line-height:1.12;
+  max-width:720px;margin:0 auto 1.25rem;
+}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero-sub{
+  font-size:clamp(1rem,2vw,1.2rem);
+  color:var(--text-muted);max-width:520px;
+  margin:0 auto 2.5rem;line-height:1.7;
+}
+.hero-stats{
+  display:flex;gap:2.5rem;justify-content:center;
+  flex-wrap:wrap;margin-bottom:2.5rem;
+}
+.stat{text-align:center}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;color:var(--rose);font-weight:900;line-height:1;
+}
+.stat-label{font-size:0.78rem;color:var(--text-muted);margin-top:4px;letter-spacing:0.04em}
+.hero-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--rose-dark),#D4608E);
+  color:#fff;font-weight:800;font-size:1.05rem;
+  padding:1rem 2.8rem;border-radius:100px;
+  text-decoration:none;
+  box-shadow:0 4px 24px rgba(181,53,122,0.4);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(181,53,122,0.5)}
+
+/* CURSOS */
+.cursos{padding:5rem 1.5rem;max-width:1100px;margin:0 auto}
+.section-label{
+  font-size:0.75rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:0.75rem;
+  text-align:center;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  color:var(--cream);line-height:1.2;
+  text-align:center;margin-bottom:0.75rem;
+}
+.section-title em{font-style:italic;color:var(--rose)}
+.section-sub{
+  font-size:1rem;color:var(--text-muted);
+  text-align:center;max-width:520px;
+  margin:0 auto 3rem;line-height:1.7;
+}
+.cursos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1.5rem;
+}
+.curso-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(232,144,190,0.15);
+  border-radius:20px;overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+}
+.curso-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(181,53,122,0.2);
+  border-color:rgba(232,144,190,0.35);
+}
+.curso-img{
+  height:200px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4rem;position:relative;overflow:hidden;
+}
+.curso-img.velas{
+  background:linear-gradient(135deg,#2D1535,#1A0D22);
+}
+.curso-img.proximamente{
+  background:linear-gradient(135deg,#1A1628,#0D0B14);
+}
+.curso-badge{
+  position:absolute;top:12px;right:12px;
+  font-size:10px;font-weight:700;
+  padding:4px 12px;border-radius:100px;
+  text-transform:uppercase;letter-spacing:0.06em;
+}
+.badge-disponible{background:rgba(181,53,122,0.2);color:var(--rose);border:1px solid rgba(181,53,122,0.3)}
+.badge-pronto{background:rgba(212,168,67,0.15);color:var(--gold);border:1px solid rgba(212,168,67,0.25)}
+.curso-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.curso-cat{
+  font-size:10px;font-weight:700;color:var(--rose);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;
+}
+.curso-body h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;color:var(--cream);
+  margin-bottom:0.6rem;line-height:1.25;
+}
+.curso-body p{
+  font-size:0.85rem;color:var(--text-muted);
+  line-height:1.65;margin-bottom:1.25rem;flex:1;
+}
+.curso-footer{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  margin-top:auto;padding-top:1rem;
+  border-top:1px solid rgba(232,144,190,0.1);
+}
+.curso-price .was{font-size:11px;color:rgba(250,240,245,0.3);text-decoration:line-through}
+.curso-price .now{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;color:var(--rose);font-weight:900;line-height:1;
+}
+.curso-btn{
+  background:linear-gradient(135deg,var(--rose-dark),#D4608E);
+  color:#fff;font-size:12px;font-weight:700;
+  padding:8px 18px;border-radius:100px;
+  text-decoration:none;transition:opacity 0.2s;
+  white-space:nowrap;
+}
+.curso-btn:hover{opacity:0.9}
+.curso-btn.disabled{
+  background:rgba(255,255,255,0.06);
+  color:var(--text-muted);cursor:default;
+}
+
+/* POR QUE */
+.porque{
+  padding:5rem 1.5rem;
+  background:linear-gradient(135deg,rgba(45,27,69,0.4),rgba(26,22,40,0.6));
+  border-top:1px solid rgba(232,144,190,0.08);
+  border-bottom:1px solid rgba(232,144,190,0.08);
+}
+.porque-inner{max-width:960px;margin:0 auto}
+.porque-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:2.5rem;
+}
+.porque-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(232,144,190,0.12);
+  border-radius:16px;padding:1.75rem;
+  text-align:center;
+}
+.porque-icon{font-size:2rem;margin-bottom:0.75rem;display:block}
+.porque-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;color:var(--cream);
+  margin-bottom:0.6rem;
+}
+.porque-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.65}
+
+/* CTA FINAL */
+.cta-final{
+  padding:6rem 1.5rem;text-align:center;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(181,53,122,0.15) 0%, transparent 65%),
+    var(--dark);
+}
+.cta-final h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  color:var(--cream);line-height:1.2;
+  max-width:600px;margin:0 auto 1rem;
+}
+.cta-final h2 em{font-style:italic;color:var(--rose)}
+.cta-final p{
+  color:var(--text-muted);max-width:440px;
+  margin:0 auto 2.5rem;font-size:1rem;line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+  background:#080610;
+  padding:2rem 1.5rem;
+  border-top:1px solid rgba(232,144,190,0.08);
+  text-align:center;
+}
+footer p{font-size:0.78rem;color:rgba(250,240,245,0.2)}
+footer a{color:rgba(232,144,190,0.4);text-decoration:none}
+
+@media(max-width:700px){
+  .nav-links{display:none}
+  .porque-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+}
+@media(max-width:500px){
+  .cursos-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Aprende y <span>Genera</span></a>
+  <div class="nav-links">
+    <a href="#cursos">Cursos</a>
+    <a href="#porque">¿Por qué nosotros?</a>
+  </div>
+  <a href="#cursos" class="nav-cta">Ver cursos</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span>Cursos digitales para Latinoamérica</div>
+  <h1>Aprende una habilidad.<br><em>Genera tus propios ingresos.</em></h1>
+  <p class="hero-sub">Cursos online paso a paso para mujeres que quieren crear su propio negocio desde casa — sin experiencia previa.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">+2,000</div><div class="stat-label">Alumnas activas</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Calificación promedio</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Online y a tu ritmo</div></div>
+  </div>
+  <a href="#cursos" class="hero-btn">Ver cursos disponibles →</a>
+</section>
+
+<!-- CURSOS -->
+<section class="cursos" id="cursos">
+  <div class="section-label">Catálogo</div>
+  <h2 class="section-title">Elige tu <em>próximo negocio</em></h2>
+  <p class="section-sub">Cada curso está diseñado para que no solo aprendas — sino para que empieces a generar ingresos reales desde tu casa.</p>
+
+  <div class="cursos-grid">
+
+    <!-- CURSO 1 — VELAS Y JABONES -->
+    <a href="/velas-y-jabones" class="curso-card">
+      <div class="curso-img velas">
+        🕯️
+        <div class="curso-badge badge-disponible">✓ Disponible</div>
+      </div>
+      <div class="curso-body">
+        <div class="curso-cat">Artesanía · Emprendimiento</div>
+        <h3>Velas y Jabones Artesanales 3x1</h3>
+        <p>Aprende más de 30 técnicas de velas y jabones artesanales. Incluye módulo completo de emprendimiento, costos y ventas en redes.</p>
+        <div class="curso-footer">
+          <div class="curso-price">
+            <div class="was">US$70</div>
+            <div class="now">US$35</div>
+          </div>
+          <span class="curso-btn">Ver curso →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CURSO 2 — PRÓXIMAMENTE -->
+    <div class="curso-card" style="cursor:default">
+      <div class="curso-img proximamente">
+        ✨
+        <div class="curso-badge badge-pronto">Próximamente</div>
+      </div>
+      <div class="curso-body">
+        <div class="curso-cat">Próximo lanzamiento</div>
+        <h3>Nuevo curso en camino</h3>
+        <p>Estamos preparando el próximo curso para que sigas ampliando tu negocio y tus ingresos. ¡Próximamente disponible!</p>
+        <div class="curso-footer">
+          <div class="curso-price">
+            <div class="was" style="opacity:0">—</div>
+            <div class="now" style="color:var(--gold);font-size:1.1rem">Muy pronto</div>
+          </div>
+          <span class="curso-btn disabled">Notificarme</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURSO 3 — PRÓXIMAMENTE -->
+    <div class="curso-card" style="cursor:default">
+      <div class="curso-img proximamente">
+        🌿
+        <div class="curso-badge badge-pronto">Próximamente</div>
+      </div>
+      <div class="curso-body">
+        <div class="curso-cat">Próximo lanzamiento</div>
+        <h3>Más cursos en camino</h3>
+        <p>Nuestra plataforma crece contigo. Nuevas habilidades, nuevas oportunidades de negocio. Mantente atenta a los próximos lanzamientos.</p>
+        <div class="curso-footer">
+          <div class="curso-price">
+            <div class="was" style="opacity:0">—</div>
+            <div class="now" style="color:var(--gold);font-size:1.1rem">Muy pronto</div>
+          </div>
+          <span class="curso-btn disabled">Notificarme</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="porque" id="porque">
+  <div class="porque-inner">
+    <div class="section-label">¿Por qué Aprende y Genera?</div>
+    <h2 class="section-title">No solo aprendes.<br><em>Empiezas a generar.</em></h2>
+    <div class="porque-grid">
+      <div class="porque-card">
+        <span class="porque-icon">📱</span>
+        <h3>100% online y flexible</h3>
+        <p>Estudia desde tu celular, tablet o computadora. A tus horarios, sin fechas límite, con acceso de por vida.</p>
+      </div>
+      <div class="porque-card">
+        <span class="porque-icon">💸</span>
+        <h3>Aprende a vender, no solo a crear</h3>
+        <p>Cada curso incluye módulo de emprendimiento — costos, marca, redes sociales y cómo conseguir tus primeras clientas.</p>
+      </div>
+      <div class="porque-card">
+        <span class="porque-icon">👩‍🤝‍👩</span>
+        <h3>Comunidad de más de 2,000 mujeres</h3>
+        <p>No estás sola. Accedes a una comunidad activa de mujeres que están exactamente en el mismo camino que tú.</p>
+      </div>
+      <div class="porque-card">
+        <span class="porque-icon">🎓</span>
+        <h3>Certificado internacional</h3>
+        <p>Al terminar cada curso recibes tu certificado personalizado con tu nombre — respaldado internacionalmente.</p>
+      </div>
+      <div class="porque-card">
+        <span class="porque-icon">🛡️</span>
+        <h3>Garantía de 7 días</h3>
+        <p>Si en 7 días el curso no cumple tus expectativas, te devolvemos cada peso. Sin preguntas, sin complicaciones.</p>
+      </div>
+      <div class="porque-card">
+        <span class="porque-icon">🚀</span>
+        <h3>Resultados desde el primer mes</h3>
+        <p>Nuestras alumnas reportan sus primeros pedidos e ingresos en el primer mes de haber empezado el curso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="section-label">Tu momento es ahora</div>
+  <h2>Hoy puede ser el día que<br><em>todo empezó.</em></h2>
+  <p>Más de 2,000 mujeres ya dieron el paso. No necesitas experiencia, ni taller, ni materiales caros. Solo las ganas de crear algo tuyo.</p>
+  <a href="#cursos" class="hero-btn">Empezar ahora →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Aprende y Genera · <a href="#">Términos y condiciones</a> · <a href="#">Política de privacidad</a><br>
+  Plataforma segura · Cursos distribuidos a través de Hotmart</p>
+</footer>
+
+</body>
+</html>
