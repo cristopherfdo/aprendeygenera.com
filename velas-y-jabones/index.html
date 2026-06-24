@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velas y Jabones Artesanales 3x1 | Curso Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FDF8F3;
+  --warm-white:#FFFEF9;
+  --charcoal:#1C1A17;
+  --gold:#C4923A;
+  --gold-light:#F0D9A8;
+  --gold-dark:#8B6420;
+  --rose:#C4607A;
+  --rose-light:#F5E4EA;
+  --sage:#5C7A5C;
+  --sage-light:#E8F0E8;
+  --text-muted:#6B6459;
+  --border:#E8DDD0;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+
+/* ======= HERO ======= */
+.hero{
+  background:#1D1225;
+  padding:2.2rem 2.5rem 2.8rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 55% 70% at 0% 50%, rgba(180,80,140,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 100% 35%, rgba(120,60,160,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(200,100,150,0.12) 0%, transparent 50%);
+  pointer-events:none;
+}
+.hero-inner-wrap{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-video-box{
+  max-width:980px;
+  margin:0 auto;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 0 1px rgba(220,140,180,0.3), 0 24px 70px rgba(0,0,0,0.7);
+}
+.hero-video-box iframe{display:block;width:100%;aspect-ratio:16/9;border:none}
+.hero-headline{text-align:center;margin-top:1.8rem;margin-bottom:1.4rem}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(220,140,180,0.12);
+  border:1px solid rgba(220,140,180,0.35);
+  color:#E8A8C8;
+  padding:6px 18px;border-radius:100px;font-size:11px;font-weight:700;
+  letter-spacing:0.08em;margin-bottom:1rem;text-transform:uppercase;
+}
+.hero-badge span{width:6px;height:6px;background:#E8A8C8;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);
+  color:#FAF0F5;
+  line-height:1.18;margin-bottom:0.75rem;
+}
+.hero h1 em{font-style:italic;color:#E890BE}
+.hero-sub{font-size:1rem;color:rgba(250,230,240,0.6);max-width:560px;margin:0 auto;line-height:1.75}
+.hero-cta-bar{
+  margin-top:1.6rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(220,140,180,0.2);
+  border-radius:14px;
+  padding:1.4rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;
+  max-width:980px;margin-left:auto;margin-right:auto;
+}
+.hero-price-group{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.price-was{font-size:1rem;color:rgba(250,230,240,0.32);text-decoration:line-through}
+.price-now{font-family:'Playfair Display',serif;font-size:2.9rem;color:#E890BE;font-weight:700;line-height:1}
+.price-note{font-size:0.8rem;color:rgba(250,230,240,0.55);line-height:1.75}
+.hero-cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem}
+.btn-hero{
+  display:inline-block;
+  background:linear-gradient(135deg,#B5357A,#D4608E);
+  color:#fff;font-weight:800;font-size:1.1rem;
+  padding:1rem 2.8rem;border-radius:8px;
+  text-decoration:none;cursor:pointer;border:none;
+  box-shadow:0 4px 20px rgba(181,53,122,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+  white-space:nowrap;letter-spacing:0.01em;
+}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(181,53,122,0.55)}
+.hero-guarantee{font-size:0.78rem;color:rgba(250,230,240,0.38);display:flex;align-items:center;gap:5px}
+.candles-row{display:none}
+@media(max-width:700px){
+  .hero{padding:1.5rem 1rem 2rem}
+  .hero h1{font-size:1.6rem}
+  .hero-cta-bar{flex-direction:column;align-items:center;text-align:center;padding:1.25rem}
+  .hero-cta-right{align-items:center}
+  .btn-hero{width:100%;text-align:center}
+  .hero-price-group{justify-content:center}
+}
+
+
+/* TRUST BAR */
+.trust-bar{background:#FFFEF9;border-bottom:1px solid var(--border);padding:1rem 1.5rem}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-muted);font-weight:500}
+
+/* SECTIONS */
+.section{padding:4rem 1.5rem;max-width:900px;margin:0 auto}
+.section-label{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--charcoal);line-height:1.2;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--rose)}
+.section-sub{font-size:1.05rem;color:var(--text-muted);max-width:600px;line-height:1.7}
+
+/* PAIN SECTION */
+.pain-section{background:#FFFEF9;padding:4rem 1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pain-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.pain-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.5rem;position:relative}
+.pain-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rose);border-radius:3px 0 0 3px}
+.pain-card p{font-size:0.95rem;color:var(--charcoal);line-height:1.6}
+
+/* PRODUCT CARDS */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.product-card{background:#FFFEF9;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,26,23,0.1)}
+.product-card.featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.product-card-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative}
+.product-card-img.velas{background:linear-gradient(135deg,#F5E4D3,#EDD4B2)}
+.product-card-img.jabones{background:linear-gradient(135deg,#E4EAF5,#D2DCF0)}
+.product-card-img.navidad{background:linear-gradient(135deg,#F5E4E4,#F0D2D2)}
+.featured-badge{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1C1A17;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
+.product-card-body{padding:1.5rem}
+.product-card-body h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:0.5rem}
+.product-card-body p{font-size:0.85rem;color:var(--text-muted);line-height:1.6}
+.product-tag{display:inline-block;background:var(--sage-light);color:var(--sage);font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;margin-top:0.75rem;text-transform:uppercase;letter-spacing:0.04em}
+
+/* FEATURE ROW */
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin:2.5rem 0}
+.feature-visual{background:#FFFEF9;border:1px solid var(--border);border-radius:24px;padding:2.5rem;text-align:center}
+.feature-visual .big-num{font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold);line-height:1;display:block}
+.feature-visual .big-label{font-size:0.95rem;color:var(--text-muted);margin-top:0.5rem}
+.feature-content h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:1rem;line-height:1.2}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem}
+.feature-list li{display:flex;gap:10px;font-size:0.95rem;color:var(--charcoal);line-height:1.5}
+.check{width:20px;height:20px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.check svg{width:11px;height:11px;stroke:var(--sage);stroke-width:2.5;fill:none}
+
+/* BONOS */
+.bonos-bg{background:#FFFEF9;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem}
+.bonos-header{text-align:center;max-width:700px;margin:0 auto 3rem}
+.bonos-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.bono-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.25rem;display:flex;flex-direction:column;gap:0.5rem}
+.bono-num{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.06em}
+.bono-title{font-size:0.9rem;font-weight:600;color:var(--charcoal);line-height:1.3}
+.bono-price{margin-top:auto;display:flex;align-items:center;gap:8px}
+.bono-price s{font-size:12px;color:var(--text-muted)}
+.bono-price .free{font-size:12px;font-weight:700;color:var(--sage)}
+.bonos-total{max-width:900px;margin:1.5rem auto 0;background:linear-gradient(135deg,#1C1A17,#2E2520);border-radius:20px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.bonos-total-text h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#FFFEF9;margin-bottom:0.4rem}
+.bonos-total-text p{font-size:0.9rem;color:rgba(255,255,255,0.6)}
+.bonos-total-price{text-align:right}
+.bonos-total-price .was{font-size:1rem;color:rgba(255,255,255,0.4);text-decoration:line-through}
+.bonos-total-price .is{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold-light);line-height:1}
+
+/* TESTIMONIOS */
+.testimonios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.testimonio-card{background:#FFFEF9;border:1px solid var(--border);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.stars{display:flex;gap:3px}
+.star{width:14px;height:14px;fill:var(--gold);color:var(--gold)}
+.testimonio-text{font-size:0.9rem;color:var(--charcoal);line-height:1.7;font-style:italic}
+.testimonio-author{display:flex;align-items:center;gap:10px;margin-top:auto}
+.author-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.author-name{font-size:0.85rem;font-weight:600}
+.author-location{font-size:0.75rem;color:var(--text-muted)}
+
+/* GARANTIA */
+.garantia{background:linear-gradient(135deg,#EAF3E4,#D8EDD8);border:1px solid #AACFAA;border-radius:24px;padding:2.5rem;display:flex;gap:2rem;align-items:center;margin:2.5rem 0;flex-wrap:wrap}
+.garantia-icon{font-size:3.5rem;flex-shrink:0}
+.garantia-text h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.75rem;color:var(--charcoal)}
+.garantia-text p{font-size:0.95rem;color:var(--text-muted);line-height:1.7}
+
+/* FAQ */
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:1px}
+.faq-item{background:#FFFEF9;border:1px solid var(--border);overflow:hidden}
+.faq-item:first-child{border-radius:16px 16px 0 0}
+.faq-item:last-child{border-radius:0 0 16px 16px}
+.faq-q{padding:1.25rem 1.5rem;font-weight:500;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;transition:transform 0.2s}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:0.9rem;color:var(--text-muted);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(160deg,#1C1A17,#2E2520);padding:5rem 1.5rem;text-align:center}
+.cta-final h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:#FFFEF9;max-width:640px;margin:0 auto 1rem;line-height:1.2}
+.cta-final h2 em{color:var(--gold-light);font-style:italic}
+.cta-final p{color:rgba(255,255,255,0.6);margin:0 auto 2.5rem;max-width:480px;font-size:1rem}
+.cta-stack{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.price-box{background:rgba(196,146,58,0.1);border:1px solid rgba(196,146,58,0.25);border-radius:16px;padding:1.5rem 2.5rem;margin-bottom:0.5rem}
+.price-box .label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:0.5rem}
+.price-box .old{font-size:1.1rem;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-bottom:0.25rem}
+.price-box .main{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold-light);line-height:1}
+.price-box .sub{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.25rem}
+.btn-cta-final{display:inline-block;background:linear-gradient(135deg,#C4923A,#E8B45A);color:#1C1A17;font-weight:700;font-size:1.2rem;padding:1.2rem 3.5rem;border-radius:100px;text-decoration:none;cursor:pointer;border:none;box-shadow:0 4px 30px rgba(196,146,58,0.4);transition:transform 0.2s,box-shadow 0.2s}
+.btn-cta-final:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(196,146,58,0.5)}
+.micro-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem}
+.micro-item{font-size:0.8rem;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:5px}
+
+/* FOOTER */
+footer{background:#131210;padding:2rem 1.5rem;text-align:center}
+footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .pain-inner,.product-grid,.feature-row,.testimonios-grid{grid-template-columns:1fr}
+  .bonos-grid{grid-template-columns:1fr 1fr}
+  .garantia{flex-direction:column}
+  .bonos-total{flex-direction:column;text-align:center}
+  .bonos-total-price{text-align:center}
+}
+@keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
+
+/* SI CARDS */
+.si-card{background:#fff;border:1px solid #EDD5E8;border-radius:14px;padding:1.1rem 1.25rem;display:flex;gap:10px;align-items:flex-start}
+.si-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.si-card p{font-size:0.9rem;color:#2C1A2E;line-height:1.6;margin:0}
+@media(max-width:600px){.si-card{grid-column:span 1}}
+
+/* TECNICAS GRID */
+.tecnicas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem}
+.tec-card{background:#FAF0F8;border:1px solid #EDD5E8;border-radius:14px;padding:1.1rem;text-align:center;transition:transform 0.2s}
+.tec-card:hover{transform:translateY(-3px)}
+.tec-card.jab{background:#F5F0FA;border-color:#D4C5E8}
+.tec-card.tec-more{background:linear-gradient(135deg,#2D1B35,#1A0D22);border-color:#3D2545}
+.tec-card.tec-more .tec-name{color:#E890BE}
+.tec-card.tec-more .tec-desc{color:rgba(250,240,245,0.6)}
+
+.btn-mostrar{background:transparent;border:1.5px solid #B5357A;color:#B5357A;padding:10px 28px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s;letter-spacing:0.03em}
+.btn-mostrar:hover{background:#B5357A;color:#fff}
+.tec-img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:0.75rem;display:block}
+.tec-emoji{font-size:1.8rem;margin-bottom:0.5rem}
+.tec-name{font-size:0.85rem;font-weight:700;color:#2C1A2E;margin-bottom:0.25rem}
+.tec-desc{font-size:0.75rem;color:#7A5A7A;line-height:1.4}
+
+/* MÓDULOS */
+.modulos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.modulo-card{background:#FAF0F8;border:1px solid #EDD5E8;border-radius:14px;overflow:hidden}
+.modulo-card.jab{background:#F5F0FA;border-color:#D4C5E8}
+.modulo-card.neg{background:#F0EDF8;border-color:#C5B8E8}
+.mod-header{background:linear-gradient(135deg,#2D1B35,#1A0D22);padding:0.85rem 1rem}
+.mod-num{display:block;font-size:11px;font-weight:700;color:#E8A8C8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px}
+.mod-title{display:block;font-size:0.9rem;font-weight:700;color:#FAF0F5}
+.mod-list{list-style:none;padding:0.9rem 1rem;margin:0;display:flex;flex-direction:column;gap:6px}
+.mod-list li{font-size:0.82rem;color:#4A2A4A;padding-left:14px;position:relative;line-height:1.4}
+.mod-list li::before{content:'·';position:absolute;left:0;color:#E890BE;font-weight:700}
+
+/* TABS */
+.tab-btn{background:#FAF0F8;border:1px solid #EDD5E8;color:#4A2A4A;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.tab-btn.active{background:linear-gradient(135deg,#2D1B35,#1A0D22);color:#E890BE;border-color:#3D2545}
+.tab-btn:hover:not(.active){background:#F0E0F0}
+@media(max-width:700px){.modulos-grid{grid-template-columns:1fr}}
+
+/* EXCUSAS */
+.excusa-card{background:rgba(255,255,255,0.05);border:1px solid rgba(232,144,190,0.15);border-radius:14px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.excusa-x{width:28px;height:28px;background:rgba(232,80,100,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#FF6B8A;flex-shrink:0;margin-top:2px}
+.excusa-mito{font-weight:700;color:#FAF0F5;margin-bottom:0.5rem;font-size:0.95rem}
+.excusa-resp{font-size:0.88rem;color:rgba(250,240,245,0.65);line-height:1.65}
+
+/* TESTIMONIOS */
+.test-card{background:#fff;border:1px solid #EDD5E8;border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:0.85rem}
+.stars-row{color:#E890BE;font-size:1rem;letter-spacing:2px}
+.test-text{font-size:0.88rem;color:#2C1A2E;line-height:1.7;font-style:italic;flex:1}
+.test-author{display:flex;align-items:center;gap:10px}
+.test-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.test-name{font-size:0.85rem;font-weight:600;color:#2C1A2E}
+.test-loc{font-size:0.75rem;color:#7A5A7A}
+@media(max-width:700px){.test-card{display:none}.test-card:first-child{display:flex}}
+
+/* GARANTIA */
+.gar-card{background:rgba(255,255,255,0.04);border:1px solid rgba(232,144,190,0.2);border-radius:16px;padding:1.75rem;text-align:center}
+.gar-icon{font-size:2.5rem;margin-bottom:0.75rem;display:block}
+.gar-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:#FAF0F5;margin-bottom:0.75rem}
+.gar-text{font-size:0.87rem;color:rgba(250,240,245,0.6);line-height:1.7}
+@media(max-width:700px){.gar-card{grid-column:span 1}}
+
+/* BONO CARDS */
+.bono-card{background:#FAF0F8;border:1px solid #EDD5E8;border-radius:14px;padding:1.1rem;display:flex;flex-direction:column;gap:0.4rem}
+.bono-num{font-size:11px;font-weight:700;color:#B5357A;text-transform:uppercase;letter-spacing:0.06em}
+.bono-title{font-size:0.88rem;font-weight:600;color:#2C1A2E;line-height:1.3;flex:1}
+.bono-price{display:flex;align-items:center;gap:8px;margin-top:auto}
+.bono-price s{font-size:12px;color:#B0A0B0}
+.free{font-size:12px;font-weight:700;color:#1B8A4A}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:1px;margin-top:1.5rem}
+.faq-item{background:#fff;border:1px solid #EDD5E8;overflow:hidden}
+.faq-item:first-child{border-radius:14px 14px 0 0}
+.faq-item:last-child{border-radius:0 0 14px 14px}
+.faq-q{padding:1.1rem 1.4rem;font-weight:500;font-size:0.93rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:#2C1A2E}
+.faq-q:hover{background:#FAF0F8}
+.faq-icon{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#FAF0F8;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;color:#B5357A}
+.faq-a{display:none;padding:0 1.4rem 1.1rem;font-size:0.88rem;color:#5A3A5A;line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+@keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
+
+/* CARRUSEL TESTIMONIOS */
+.carousel-wrapper{position:relative;display:flex;align-items:center;gap:8px;margin-top:1rem}
+.carousel-track-container{overflow:hidden;flex:1;border-radius:16px}
+.carousel-track{display:flex;transition:transform 0.45s cubic-bezier(.4,0,.2,1);gap:16px}
+.carousel-slide{flex:0 0 calc(33.333% - 11px);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(45,27,53,0.15);border:1px solid #EDD5E8}
+.carousel-slide img{width:100%;aspect-ratio:9/19;object-fit:cover;display:block;border-radius:14px}
+.car-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid #B5357A;background:#FAF0F8;color:#B5357A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;z-index:2}
+.car-btn:hover{background:#B5357A;color:#fff}
+.carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:1rem}
+.car-dot{width:8px;height:8px;border-radius:50%;background:#EDD5E8;cursor:pointer;transition:background 0.2s}
+.car-dot.active{background:#B5357A;width:22px;border-radius:100px}
+@media(max-width:600px){
+  .carousel-slide{flex:0 0 calc(100% - 0px)}
+  .car-btn{width:32px;height:32px;font-size:14px}
+}
+
+/* BONOS TABLA */
+.bonos-tabla{border:1px solid #EDD5E8;border-radius:16px;overflow:hidden;margin-bottom:2rem}
+.bt-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:1px solid #EDD5E8}
+.bt-row:last-child{border-bottom:none}
+.bt-img{background:#FAF0F8;display:flex;align-items:center;justify-content:center;padding:0;border-right:1px solid #EDD5E8;min-height:140px}
+.bt-img img{width:100%;height:140px;object-fit:contain;display:block;background:#FAF0F8;padding:6px}
+.bt-txt{background:#fff;padding:0.85rem 1rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #EDD5E8}
+.bt-txt:last-child{border-right:none}
+.bt-nombre{font-size:0.82rem;font-weight:700;color:#B5357A;margin-bottom:0.25rem;font-style:italic}
+.bt-desc{font-size:0.75rem;color:#5A3A5A;line-height:1.45;margin-bottom:0.4rem}
+.bt-price{display:flex;align-items:center;gap:10px;margin-top:auto}
+.bt-price s{font-size:12px;color:#B0A0B0}
+.bt-gratis{font-size:13px;font-weight:800;color:#B5357A}
+@media(max-width:600px){
+  .bt-row{grid-template-columns:1fr 1fr}
+}
+
+.gar-card-new{background:rgba(255,255,255,0.04);border:1px solid rgba(232,144,190,0.2);border-radius:14px;padding:1.75rem 1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.gar-sello-wrap{width:180px;height:180px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center}
+.gar-sello-img{width:100%;height:100%;object-fit:contain;display:block}
+.gar-title-new{font-family:'Playfair Display',serif;font-size:1.3rem;color:#FAF0F5;margin-bottom:0.75rem;line-height:1.25;font-weight:700}
+.gar-text-new{font-size:0.85rem;color:rgba(250,240,245,0.7);line-height:1.7;text-align:center}
+@media(max-width:700px){.gar-card-new{margin-bottom:1rem} .gar-sello-wrap svg{width:160px!important;height:160px!important}}
+
+.gar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:700px){.gar-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner-wrap">
+    <div class="hero-video-box">
+      <iframe
+        src="https://player.vimeo.com/video/1199266362?autoplay=1&muted=1&loop=0&title=0&byline=0&portrait=0&badge=0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        style="display:block;width:100%;aspect-ratio:16/9;border:none;">
+      </iframe>
+    </div>
+    <div class="hero-headline">
+      <div class="hero-badge"><span></span>Cupos limitados · Acceso inmediato</div>
+      <h1>Aprende a crear velas y jabones artesanales<br><em>y conviértelo en tu negocio en 14 días</em></h1>
+      <p class="hero-sub">Más de 30 técnicas exclusivas paso a paso · Sin experiencia previa · Desde tu casa</p>
+    </div>
+    <div class="hero-cta-bar">
+      <div class="hero-price-group">
+        <div>
+          <div class="price-was">US$70</div>
+          <div class="price-now">US$35</div>
+        </div>
+        <div class="price-note">✅ 3 cursos completos<br>✅ 16 bonos gratis<br>✅ Acceso de por vida</div>
+      </div>
+      <div class="hero-cta-right">
+        <button class="btn-hero" onclick="window.open('https://go.hotmart.com/B106162905Y?ap=e5ca','_blank')">🎉 Quiero inscribirme ahora</button>
+        <p class="hero-guarantee">🔒 Garantía 7 días · Pago 100% seguro · Acceso inmediato</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">⭐ 4.9/5 promedio de calificación</div>
+    <div class="trust-item">👩‍🎓 +2,000 alumnas activas</div>
+    <div class="trust-item">🎓 Certificado internacional incluido</div>
+    <div class="trust-item">📱 Acceso desde cualquier dispositivo</div>
+    <div class="trust-item">♾️ Acceso de por vida</div>
+  </div>
+</div>
+
+<!-- PARA QUIEN ES -->
+<div style="background:#FAF0F8;padding:3.5rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;margin-bottom:2rem">
+    <div class="section-label">¿Es para ti?</div>
+    <h2 class="section-title">Este curso es para ti si…</h2>
+  </div>
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+    <div class="si-card"><span class="si-icon">✅</span><p>Quieres generar ingresos desde casa haciendo algo creativo y propio</p></div>
+    <div class="si-card"><span class="si-icon">✅</span><p>Eres principiante total y quieres aprender desde cero, paso a paso, sin perderte</p></div>
+    <div class="si-card"><span class="si-icon">✅</span><p>Buscas un negocio rentable con baja inversión inicial y alta demanda todo el año</p></div>
+    <div class="si-card"><span class="si-icon">✅</span><p>Ya tienes algo de experiencia y quieres técnicas avanzadas para diferenciarte</p></div>
+    <div class="si-card"><span class="si-icon">✅</span><p>Quieres aprender a empacar, poner precio y vender tus productos en redes sociales</p></div>
+    <div class="si-card"><span class="si-icon">✅</span><p>Sueñas con tener tu propia marca artesanal y no saber cómo empezar</p></div>
+  </div>
+</div>
+
+<!-- GALERIA VELAS -->
+<div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:1000px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Lo que aprenderás a crear</div>
+      <h2 class="section-title">🕯️ +30 técnicas de <em>velas artesanales</em></h2>
+      <p class="section-sub" style="margin:0 auto">"Adéntrate en el aprendizaje y descubre las velas que te esperan"</p>
+    </div>
+    <div class="tecnicas-grid">
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-15-0366822.png?format=webp" alt="Vela Iceberg"><div class="tec-name">Vela Iceberg</div><div class="tec-desc">Acabado cristalino único y luminoso</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-5-0260324.png?format=webp" alt="Vela Mormorizada"><div class="tec-name">Vela Mormorizada</div><div class="tec-desc">Efecto mármol sofisticado y elegante</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0260559.png?format=webp" alt="Vela Suculenta"><div class="tec-name">Vela Suculenta</div><div class="tec-desc">Realismo floral con cera y moldes 3D</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0260755.png?format=webp" alt="Técnicas de Repostería"><div class="tec-name">Técnicas de Repostería</div><div class="tec-desc">Velas que parecen pasteles reales</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-8-0260949.png?format=webp" alt="Vela Ponque"><div class="tec-name">Vela Ponque</div><div class="tec-desc">Diseño dulce y realista</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Images/Diseno_sin_titulo-9-0345616.png?format=webp" alt="Vela Microperlada"><div class="tec-name">Vela Microperlada</div><div class="tec-desc">Acabado brillante con finas perlas</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Images/Diseno_sin_titulo-10-0345955.png?format=webp" alt="Vela Hidratante"><div class="tec-name">Vela Hidratante</div><div class="tec-desc">Aroma envolvente y propiedades nutritivas</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Images/Diseno_sin_titulo-11-0346384.png?format=webp" alt="Vela Capuchino"><div class="tec-name">Vela Capuchino</div><div class="tec-desc">Textura cremosa con aroma envolvente</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Images/Diseno_sin_titulo-12-0347282.png?format=webp" alt="Velones"><div class="tec-name">Velones</div><div class="tec-desc">Grandes y elegantes para ocasiones especiales</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Images/Diseno_sin_titulo-13-0347658.png?format=webp" alt="Vela en Vaso"><div class="tec-name">Vela en Vaso</div><div class="tec-desc">Elegante con aromas envolventes</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-17-0366822.png?format=webp" alt="Vela en Molde"><div class="tec-name">Vela en Molde</div><div class="tec-desc">Diseño creativo y único</div></div>
+      <div class="tec-card"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-22-0367015.png?format=webp" alt="Bouquet en Ramo"><div class="tec-name">Bouquet en Ramo</div><div class="tec-desc">Arreglos florales en cera aromática</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-25-0368212.png?format=webp" alt="Vela Incrustada"><div class="tec-name">Vela Incrustada</div><div class="tec-desc">Arte en capas con efecto sorprendente</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-14-0366821.png?format=webp" alt="Técnica Glitter"><div class="tec-name">Técnica Glitter</div><div class="tec-desc">Destellos glamorosos y festivos</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-26-0368772.png?format=webp" alt="Técnica Ice Latte"><div class="tec-name">Técnica Ice Latte</div><div class="tec-desc">Diseño sofisticado que simula el hielo</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-27-0369141.png?format=webp" alt="Pastillas Aromatizantes"><div class="tec-name">Pastillas Aromatizantes</div><div class="tec-desc">Pequeñas joyas fragantes de larga duración</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-29-0371955.png?format=webp" alt="Técnica Pergamino"><div class="tec-name">Técnica Pergamino</div><div class="tec-desc">Acabado que imita el papel antiguo</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-32-0372259.png?format=webp" alt="Técnica de Cerveza"><div class="tec-name">Técnica de Cerveza</div><div class="tec-desc">Diseño divertido y único para celebrar</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-35-0372994.png?format=webp" alt="Vela de Cumpleañero"><div class="tec-name">Vela de Cumpleañero</div><div class="tec-desc">Alegre y colorida para el día especial</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-24-0367451.png?format=webp" alt="Árbol de Navidad"><div class="tec-name">Árbol de Navidad</div><div class="tec-desc">Colección navideña exclusiva</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-19-0366822.png?format=webp" alt="Vela Copa Invertida"><div class="tec-name">Vela Copa Invertida</div><div class="tec-desc">Elegante y única para celebraciones</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-23-0367149.png?format=webp" alt="Bubble Navideña"><div class="tec-name">Bubble Navideña</div><div class="tec-desc">Moderna con burbujas texturizadas festivas</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-18-0366822.png?format=webp" alt="Velas con Agua Navideñas"><div class="tec-name">Velas con Agua Navideñas</div><div class="tec-desc">Efecto mágico con elementos sumergidos</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/3-2534717.png?format=webp" alt="Vela Porcelana Barnizada"><div class="tec-name">Vela Porcelana Barnizada</div><div class="tec-desc">Acabado brillante que simula cerámica</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/4-2534717.png?format=webp" alt="Vela tipo Horneada"><div class="tec-name">Vela tipo Horneada</div><div class="tec-desc">Textura rústica y aspecto artesanal</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/5-2534717.png?format=webp" alt="Waxmelts Cuchariable"><div class="tec-name">Waxmelts Cuchariable</div><div class="tec-desc">Textura cremosa y alto poder aromático</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/2-2534717.png?format=webp" alt="Waxmelts Exprimible"><div class="tec-name">Waxmelts Exprimible</div><div class="tec-desc">Formato flexible para dosificar fácilmente</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Copia_de_Copia_de_Diseno_sin_titulo-2539021.png?format=webp" alt="Vela en Cuarzo"><div class="tec-name">Vela en Cuarzo</div><div class="tec-desc">Diseño inspirado en piedras naturales</div></div>
+      <div class="tec-card tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/1-1874966.png?format=webp" alt="Vela en Espiral"><div class="tec-name">Vela en Espiral</div><div class="tec-desc">Diseño dinámico y acabado elegante</div></div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <button class="btn-mostrar" id="btn-velas" onclick="mostrarMas('btn-velas')">Ver todas las técnicas ↓</button>
+    </div>
+  </div>
+</div>
+
+<!-- GALERIA JABONES -->
+<div style="background:#F5F0FA;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:1000px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Lo que aprenderás a crear</div>
+      <h2 class="section-title">🧼 +18 técnicas de <em>jabones artesanales</em></h2>
+      <p class="section-sub" style="margin:0 auto">Jabones naturales, medicinales y decorativos con ingredientes reales</p>
+    </div>
+    <div class="tecnicas-grid">
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-9-0377054.png?format=webp" alt="Jabón Carbón Activado"><div class="tec-name">Jabón Carbón Activado</div><div class="tec-desc">Purificante profundo para el rostro</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-11-0377054.png?format=webp" alt="Jabón de Cacao"><div class="tec-name">Jabón de Cacao</div><div class="tec-desc">Hidratante con antioxidantes naturales</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-25-0377315.png?format=webp" alt="Jabón de Café"><div class="tec-name">Jabón de Café</div><div class="tec-desc">Exfoliante energizante natural</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-12-0377054.png?format=webp" alt="Jabón Avena y Miel"><div class="tec-name">Jabón Avena y Miel</div><div class="tec-desc">Hidratante suave para todo tipo de piel</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-13-0377054.png?format=webp" alt="Jabón de Arroz"><div class="tec-name">Jabón de Arroz</div><div class="tec-desc">Suave aclarador que ilumina la piel</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-14-0377054.png?format=webp" alt="Jabón de Chocolate"><div class="tec-name">Jabón de Chocolate</div><div class="tec-desc">Nutre e hidrata con antioxidantes</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-15-0377055.png?format=webp" alt="Jabón de Lufa"><div class="tec-name">Jabón de Lufa</div><div class="tec-desc">Exfoliante natural revitalizante</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-16-0377055.png?format=webp" alt="Jabón de Lavanda"><div class="tec-name">Jabón de Lavanda</div><div class="tec-desc">Relajante y aromático, cuida la piel</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-17-0377055.png?format=webp" alt="Jabón de Manzanilla"><div class="tec-name">Jabón de Manzanilla</div><div class="tec-desc">Suave y calmante para pieles sensibles</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-18-0377055.png?format=webp" alt="Jabón de Cúrcuma"><div class="tec-name">Jabón de Cúrcuma</div><div class="tec-desc">Antiinflamatorio y revitalizante</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-19-0377055.png?format=webp" alt="Jabón de Caléndula"><div class="tec-name">Jabón de Caléndula</div><div class="tec-desc">Suave y cicatrizante para pieles sensibles</div></div>
+      <div class="tec-card jab"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-22-0377055.png?format=webp" alt="Jabón de Romero"><div class="tec-name">Jabón de Romero</div><div class="tec-desc">Tonificante y revitalizante natural</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-10-0377054.png?format=webp" alt="Jabón Incrustado"><div class="tec-name">Jabón Incrustado</div><div class="tec-desc">Diseño artístico y decorativo único</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-23-0377055.png?format=webp" alt="Jabón de Almendras"><div class="tec-name">Jabón de Almendras</div><div class="tec-desc">Hidratante y nutritivo, sensación sedosa</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/Diseno_sin_titulo-24-0377056.png?format=webp" alt="Jabón Hidratante"><div class="tec-name">Jabón Hidratante</div><div class="tec-desc">Limpieza delicada y profunda</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-4-1876076.png?format=webp" alt="Jabón Líquido Orgánico"><div class="tec-name">Jabón Líquido Orgánico</div><div class="tec-desc">Ingredientes naturales, suave y fresco</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/5-1874967.png?format=webp" alt="Jabón Racimo de Uva"><div class="tec-name">Jabón Racimo de Uva</div><div class="tec-desc">Antioxidante con aroma dulce y afrutado</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-3-1876032.png?format=webp" alt="Jabón Espiral Incrustado"><div class="tec-name">Jabón Espiral Incrustado</div><div class="tec-desc">Diseño decorativo con acabado único</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/uploads/Descargado/3-1874967.png?format=webp" alt="Jabón Flexible Jelly"><div class="tec-name">Jabón Flexible Jelly</div><div class="tec-desc">Textura elástica, experiencia divertida</div></div>
+      <div class="tec-card jab tec-extra" style="display:none"><img class="tec-img" src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/2-1874967.png?format=webp" alt="Jabón Paleta Sandía"><div class="tec-name">Jabón Paleta Sandía</div><div class="tec-desc">Colorido, fresco y divertido</div></div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <button class="btn-mostrar" id="btn-jabones" onclick="mostrarMas('btn-jabones')">Ver todos los jabones ↓</button>
+    </div>
+  </div>
+</div>
+
+<!-- PLAN DE ESTUDIOS -->
+<div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Plan de estudios</div>
+      <h2 class="section-title">📚 Más de <em>120 clases · 21 horas</em> de contenido</h2>
+      <p class="section-sub" style="margin:0 auto">Organizado en módulos progresivos. Avanzas a tu ritmo, desde cero hasta experta.</p>
+    </div>
+
+    <!-- TABS -->
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:2rem;flex-wrap:wrap">
+      <button class="tab-btn active" onclick="showTab('velas',this)">🕯️ Velas Artesanales</button>
+      <button class="tab-btn" onclick="showTab('jabones',this)">🧼 Jabones Artesanales</button>
+      <button class="tab-btn" onclick="showTab('negocio',this)">💼 Emprendimiento</button>
+    </div>
+
+    <div id="tab-velas" class="tab-content">
+      <div class="modulos-grid">
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 1</span><span class="mod-title">Cómo consumir el programa</span></div><ul class="mod-list"><li>Conoce tus mentores</li><li>Conoce la plataforma</li><li>Cuánto dinero necesito para iniciar</li><li>Lista de proveedores para velas artesanales</li><li>Lista de proveedores para jabones artesanales</li><li>Comunidad de apoyo</li></ul></div>
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 2</span><span class="mod-title">Tu primera vela artesanal</span></div><ul class="mod-list"><li>Términos comunes</li><li>Ceras que se manejan en el programa</li><li>Aceite vs fragancias</li><li>Colorantes</li><li>Mezcla de ceras</li><li>Aprende de pabilos</li><li>Densidad de la cera vs agua</li><li>Tu primera vela (primer proyecto)</li></ul></div>
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 3</span><span class="mod-title">Velas Básicas</span></div><ul class="mod-list"><li>Bubble pastel</li><li>Figuras aromáticas</li><li>Marmoleada en molde de silicona</li><li>Vela hidratante para tu piel</li><li>Endurecedor natural</li><li>Velón básico en parafina china</li><li>Cera microperlada</li><li>Limpieza de utensilios</li><li>Vela en gel en molde</li></ul></div>
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 4</span><span class="mod-title">Velas Intermedias</span></div><ul class="mod-list"><li>Pergamino</li><li>Revelación de género</li><li>Souvenir · Vela sorpresa</li><li>Cera microperlada + agua</li><li>Cera microperlada en capas</li><li>Coronita en botella</li><li>Intencionales (Pasión y protección)</li><li>Técnica a 45 grados</li><li>Vela efecto horneable</li><li>Vela efecto porcelana barnizada</li><li>Waxmelt cuchariable</li><li>Waxmelt squeezable / exprimible</li></ul></div>
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 5</span><span class="mod-title">Velas Avanzadas</span></div><ul class="mod-list"><li>Ponquesito</li><li>Iceberg · Glitter</li><li>Capuchino · Suculentas</li><li>Sandía</li><li>Feliz cumpleaños — Confeti</li><li>Cheesecake · Ice latte</li><li>Pop Corns</li><li>Proyecto decorativos en yeso "Alabastro"</li><li>Bouquet de ramos</li><li>Vela tipo cuarzo</li></ul></div>
+        <div class="modulo-card"><div class="mod-header"><span class="mod-num">Módulo 6</span><span class="mod-title">Moldes en 3D</span></div><ul class="mod-list"><li>Teoría para moldes en silicona</li><li>Materiales para tus moldes</li><li>Proceso de elaboración</li><li>Desmoldado del molde</li><li>Pulido y acabado final</li></ul></div>
+      </div>
+    </div>
+
+    <div id="tab-jabones" class="tab-content" style="display:none">
+      <div class="modulos-grid">
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 1</span><span class="mod-title">Tu primer jabón artesanal</span></div><ul class="mod-list"><li>Jabón de glicerina</li><li>Alcohol al 96</li><li>Extractos vegetales</li><li>Aceites vegetales</li><li>Aditivos naturales</li><li>Fragancias</li><li>Bases de glicerina</li><li>Colorantes</li><li>Tu primer jabón (primer proyecto)</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 2</span><span class="mod-title">Jabones Exfoliantes</span></div><ul class="mod-list"><li>Jabón de café</li><li>Jabón de lufa</li><li>Jabón de arroz</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 3</span><span class="mod-title">Jabones Hidratantes</span></div><ul class="mod-list"><li>Jabón de chocolate</li><li>Jabón de almendras</li><li>Jabón de avena y miel</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 4</span><span class="mod-title">Jabones Medicinales y Terapéuticos</span></div><ul class="mod-list"><li>Jabón de manzanilla</li><li>Jabón de cúrcuma</li><li>Jabón de lavanda</li><li>Jabón de romero</li><li>Caléndula</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 5</span><span class="mod-title">Jabones de Cuidado Facial</span></div><ul class="mod-list"><li>Jabón carbón activado</li><li>Jabón de aloe vera</li><li>Jabón de limón</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 6</span><span class="mod-title">Jabones Decorativos</span></div><ul class="mod-list"><li>Jabón incrustado</li><li>Jabón ponquesito</li></ul></div>
+        <div class="modulo-card jab"><div class="mod-header"><span class="mod-num">Módulo 7</span><span class="mod-title">Jabones de Rituales</span></div><ul class="mod-list"><li>Jabón afrodisíaco</li><li>Jabón de abundancia</li></ul></div>
+      </div>
+    </div>
+
+    <div id="tab-negocio" class="tab-content" style="display:none">
+      <div class="modulos-grid">
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Experiencia de Usuario</span></div><ul class="mod-list"><li>Cómo empacar tus productos</li><li>Embalaje para tus productos</li></ul></div>
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Domina tus Finanzas</span></div><ul class="mod-list"><li>Calculadora de costos y presupuesto de velas artesanales</li><li>Calculadora de costos y presupuesto de jabones artesanales</li><li>Tu ruta a la rentabilidad — conoce tu punto de equilibrio</li><li>Finanzas para la vida — estrategias financieras para emprendedoras</li></ul></div>
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Emprendimiento Digital</span></div><ul class="mod-list"><li>¡Comienza la aventura! Presentación</li><li>Encuentra tu oportunidad — investigación de mercado</li><li>Crea tu negocio digital (Facebook, Instagram, TikTok)</li><li>Diseña tu marca única — construcción de identidad visual</li><li>Vende con estilo — portafolio, etiquetas y mensaje de marca</li><li>Vende con éxito — estrategias de cierre efectivo</li></ul></div>
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Emprendimiento Físico</span></div><ul class="mod-list"><li>¡Hazte visible! — configura tu negocio en Google Maps</li><li>Crea una identidad visual atractiva para tu negocio físico</li><li>Técnicas de atención al cliente</li><li>Proyecta confianza y profesionalismo con tu cliente</li><li>Estrategias comerciales para triunfar</li></ul></div>
+      </div>
+    </div>
+
+    <div style="height:2rem"></div>
+<!-- EXCUSAS -->
+<div style="background:linear-gradient(135deg,#2D1B35,#1A0D22);padding:4rem 1.5rem;border-bottom:1px solid #3D2545;">
+  <div style="max-width:860px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label" style="color:#E8A8C8">Las 3 excusas que te frenan</div>
+      <h2 class="section-title" style="color:#FAF0F5">No dejes que estas ideas te roben <em>tu oportunidad</em></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1.25rem">
+      <div class="excusa-card">
+        <div class="excusa-x">✗</div>
+        <div>
+          <div class="excusa-mito">"No tengo tiempo suficiente para un curso"</div>
+          <div class="excusa-resp">El curso es 100% en línea y flexible. Dedicando solo 20-30 minutos al día avanzas a tu ritmo. Tienes acceso de por vida — sin fechas límite ni horarios fijos.</div>
+        </div>
+      </div>
+      <div class="excusa-card">
+        <div class="excusa-x">✗</div>
+        <div>
+          <div class="excusa-mito">"No soy creativa para hacer velas o jabones"</div>
+          <div class="excusa-resp">El curso está diseñado para principiantes absolutas. No necesitas talento previo — solo seguir el paso a paso. Miles de alumnas sin experiencia hoy tienen su propio negocio.</div>
+        </div>
+      </div>
+      <div class="excusa-card">
+        <div class="excusa-x">✗</div>
+        <div>
+          <div class="excusa-mito">"Puedo aprender gratis en YouTube"</div>
+          <div class="excusa-resp">Los tutoriales sueltos no te dan estructura, ni comunidad, ni módulo de emprendimiento, ni certificado, ni lista de proveedores. Aquí tienes todo organizado para que pases de aprender a vender.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">¡No tengo estas excusas, quiero empezar! →</a>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIOS -->
+<div style="background:#FAF0F8;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:960px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Resultados reales</div>
+      <h2 class="section-title">Lo que dicen nuestras <em>alumnas</em></h2>
+    </div>
+    <!-- CARRUSEL -->
+    <div class="carousel-wrapper">
+      <button class="car-btn car-prev" onclick="moveCarousel(-1)" aria-label="Anterior">&#8592;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="testimonios-track">
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1L9zF_u8ZeUELejwMTvjpuuF92qgNTMLQ" alt="Testimonio IMG_6298" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1EVoQoIooo-Kouzos66ytAu1N0WZwwDp_" alt="Testimonio IMG_6299" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/16wAJPvq04aXnlnZkB2wbI5J1cNLtkHuT" alt="Testimonio IMG_6300" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1rlPc575e7BHdc_eWxaImwVD4_awZKSLX" alt="Testimonio IMG_6301" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1_n8Fa9IJtRMuLHcG3gOKlGG4heLJNh4R" alt="Testimonio IMG_6302" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1cJsBibCXm0dVL-jJOq6hWkSsCs63arHe" alt="Testimonio IMG_4413" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1r3bgO7IHyUiOX2rec20ntmgIhsGZKBO1" alt="Testimonio IMG_4415" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1xLYfYM0lFjGf-fdgV6ddrk9qoOfc2dc1" alt="Testimonio IMG_4416" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/13Wxerx_Q0Scn1U4Zryr323GgSQf90bw7" alt="Testimonio IMG_4417" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1hgBoK9tv2ztjj4RCzgymMPGFSLRz3jah" alt="Testimonio IMG_4418" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1tqMnObvR_bmHVEMRDZRb9lJBz07RkHFd" alt="Testimonio IMG_4419" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1DrQVu-WffA3MWXoELnxL3MfNvqgCWs4m" alt="Testimonio IMG_4422" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1GvHaNor22maf_7icCyg2r7Vn6ZNSxDCe" alt="Testimonio IMG_4421" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1BBIcjdsIE1vCVqJeOCKMpbUfmXPk6lyM" alt="Testimonio IMG_4424" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1b-798C1mmI5pmphUApEJPPRbvMPLTNL2" alt="Testimonio IMG_4425" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1RYsS-X1eONhCZ_bTgx7R6wL-4-h0_WcH" alt="Testimonio IMG_4426" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1DFMpm1ItclOiOtSnbNwrRwZAhIUv0ZQ9" alt="Testimonio IMG_4427" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Ro7zA7Rb4BESTlDUHJRs4Jc6mtZ6_5Wg" alt="Testimonio IMG_4428" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1jLZ1-jk-Jyf5sapT1yz4WVeX1pIFRKpq" alt="Testimonio IMG_4429" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/19QeI-1PQgy_-mJMitNxrFRfTNHmUpe_N" alt="Testimonio IMG_4423" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        </div>
+      </div>
+      <button class="car-btn car-next" onclick="moveCarousel(1)" aria-label="Siguiente">&#8594;</button>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</div>
+
+
+<!-- CERTIFICADO -->
+<div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;text-align:center">
+  <div style="max-width:860px;margin:0 auto">
+    <div class="section-label">Bonus incluido</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#C0392B;font-weight:900;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:0.3rem">¡Además podrás reclamar tu</h2>
+    <h3 style="font-size:clamp(0.9rem,2vw,1.15rem);color:#2C1A2E;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2.5rem">Certificado personalizado con tu nombre!</h3>
+
+    <!-- DIPLOMA HTML -->
+    <div style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
+      <div style="border:1.5px solid #C9A84C;padding:2.5rem 3rem;position:relative;background:#fffdf5">
+
+        <!-- Sello dorado premium -->
+        <div style="position:absolute;top:1.2rem;left:1.8rem;width:90px;height:90px">
+          <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="sg1" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#FFF0A0"/>
+                <stop offset="30%" stop-color="#F0C030"/>
+                <stop offset="65%" stop-color="#B8860B"/>
+                <stop offset="100%" stop-color="#8B6010"/>
+              </radialGradient>
+              <radialGradient id="sg2" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#FFF8C0"/>
+                <stop offset="40%" stop-color="#E8B820"/>
+                <stop offset="100%" stop-color="#9A7010"/>
+              </radialGradient>
+              <radialGradient id="sg3" cx="45%" cy="40%" r="55%">
+                <stop offset="0%" stop-color="#FFFAD0"/>
+                <stop offset="50%" stop-color="#D4A017"/>
+                <stop offset="100%" stop-color="#7A5500"/>
+              </radialGradient>
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#6B4400" flood-opacity="0.5"/>
+              </filter>
+            </defs>
+
+            <!-- Cintas -->
+            <polygon points="38,78 44,95 50,88 56,95 62,78" fill="#C9A030"/>
+            <polygon points="40,78 44,92 50,86 56,92 60,78" fill="#E8C040"/>
+            <line x1="50" y1="78" x2="50" y2="95" stroke="#A07820" stroke-width="0.5"/>
+
+            <!-- Corona de rayos externos -->
+            <g filter="url(#shadow)">
+              <!-- 24 puntas alternando largo y corto -->
+              <polygon points="50,5 52.5,16 55,5" fill="url(#sg1)"/>
+              <polygon points="50,5 47.5,16 45,5" fill="url(#sg1)"/>
+              <polygon points="63,8 61,19 66,11" fill="url(#sg1)"/>
+              <polygon points="37,8 39,19 34,11" fill="url(#sg1)"/>
+              <polygon points="73,17 67,26 75,22" fill="url(#sg1)"/>
+              <polygon points="27,17 33,26 25,22" fill="url(#sg1)"/>
+              <polygon points="80,28 71,34 82,33" fill="url(#sg1)"/>
+              <polygon points="20,28 29,34 18,33" fill="url(#sg1)"/>
+              <polygon points="84,41 74,43 86,46" fill="url(#sg1)"/>
+              <polygon points="16,41 26,43 14,46" fill="url(#sg1)"/>
+              <polygon points="84,55 74,53 85,59" fill="url(#sg1)"/>
+              <polygon points="16,55 26,53 15,59" fill="url(#sg1)"/>
+              <polygon points="79,67 71,62 78,71" fill="url(#sg1)"/>
+              <polygon points="21,67 29,62 22,71" fill="url(#sg1)"/>
+              <polygon points="70,76 65,68 67,79" fill="url(#sg1)"/>
+              <polygon points="30,76 35,68 33,79" fill="url(#sg1)"/>
+            </g>
+
+            <!-- Anillo exterior -->
+            <circle cx="50" cy="44" r="34" fill="url(#sg1)" filter="url(#shadow)"/>
+            <!-- Anillo medio highlight -->
+            <circle cx="50" cy="44" r="34" fill="none" stroke="#FFF8A0" stroke-width="1.2" opacity="0.6"/>
+            <!-- Anillo decorativo dentado -->
+            <circle cx="50" cy="44" r="30" fill="url(#sg2)"/>
+            <!-- Borde dentado interior simulado -->
+            <circle cx="50" cy="44" r="30" fill="none" stroke="#7A5500" stroke-width="0.8" stroke-dasharray="2.5,1.5"/>
+            <!-- Círculo interior -->
+            <circle cx="50" cy="44" r="25" fill="url(#sg3)"/>
+            <!-- Línea circular fina interior -->
+            <circle cx="50" cy="44" r="22" fill="none" stroke="#FFF0A0" stroke-width="0.7" opacity="0.8"/>
+
+            <!-- Corona pequeña top -->
+            <polygon points="50,24 52,29 57,29 53,32 55,37 50,34 45,37 47,32 43,29 48,29" fill="#7A5500" opacity="0.9"/>
+
+            <!-- Estrellas -->
+            <text x="50" y="46" text-anchor="middle" font-size="7" fill="#4A3000" font-family="serif" font-weight="bold" opacity="0.9">★ ★ ★</text>
+            <text x="50" y="56" text-anchor="middle" font-size="5.5" fill="#4A3000" font-family="serif" letter-spacing="1">CERTIFICADO</text>
+
+            <!-- Highlight superior para efecto 3D -->
+            <ellipse cx="44" cy="32" rx="10" ry="6" fill="white" opacity="0.15"/>
+          </svg>
+        </div>
+
+        <!-- Texto del diploma -->
+        <div style="text-align:center">
+          <p style="font-size:0.78rem;letter-spacing:0.12em;color:#3A2A0A;text-transform:uppercase;margin-bottom:0.2rem;font-weight:600">Academia Virtual Manitas Creativas</p>
+          <p style="font-size:0.72rem;letter-spacing:0.1em;color:#5A4A2A;text-transform:uppercase;margin-bottom:1.2rem">Otorga el presente</p>
+
+          <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#1A0A00;letter-spacing:0.06em;margin-bottom:1rem;font-weight:900">CERTIFICADO</h1>
+
+          <p style="font-size:0.75rem;letter-spacing:0.14em;color:#5A4A2A;text-transform:uppercase;margin-bottom:0.5rem">Finalización a</p>
+
+          <p style="font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,4vw,2.8rem);color:#1A0A00;margin-bottom:1.2rem;border-bottom:1px solid #C9A84C;padding-bottom:0.75rem;max-width:400px;margin-left:auto;margin-right:auto">Tu nombre Aquí</p>
+
+          <p style="font-size:0.72rem;letter-spacing:0.1em;color:#3A2A0A;text-transform:uppercase;margin-bottom:2rem">Por haber cumplido satisfactoriamente el curso de velas y<br>jabones artesanales</p>
+
+          <!-- Firmas -->
+          <div style="display:flex;justify-content:space-around;align-items:flex-end;margin-top:1rem">
+            <div style="text-align:center">
+              <div style="font-family:'Dancing Script',cursive;font-size:1.6rem;color:#1A0A00;border-bottom:1px solid #C9A84C;padding-bottom:0.25rem;margin-bottom:0.4rem;min-width:120px">Laura S.</div>
+              <p style="font-size:0.7rem;font-weight:700;color:#3A2A0A;text-transform:uppercase;letter-spacing:0.06em">Laura Salamanca</p>
+              <p style="font-size:0.65rem;color:#7A6A4A">Tutora</p>
+            </div>
+            <div style="text-align:center">
+              <div style="font-family:'Dancing Script',cursive;font-size:1.6rem;color:#1A0A00;border-bottom:1px solid #C9A84C;padding-bottom:0.25rem;margin-bottom:0.4rem;min-width:120px">A. Bedoya</div>
+              <p style="font-size:0.7rem;font-weight:700;color:#3A2A0A;text-transform:uppercase;letter-spacing:0.06em">Andres Bedoya</p>
+              <p style="font-size:0.65rem;color:#7A6A4A">Tutor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ola decorativa inferior -->
+        <div style="margin:-2.5rem -3rem -2.5rem;margin-top:1.5rem;height:55px;overflow:hidden">
+          <svg viewBox="0 0 740 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%">
+            <path d="M0,20 Q185,55 370,25 Q555,-5 740,30 L740,55 L0,55 Z" fill="#C9A84C"/>
+            <path d="M0,30 Q185,65 370,35 Q555,5 740,40 L740,55 L0,55 Z" fill="#8B6010"/>
+            <path d="M0,40 Q185,70 370,45 Q555,15 740,50 L740,55 L0,55 Z" fill="#5A3A00"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-size:0.95rem;color:#5A3A5A;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7">Al completar el curso recibirás tu <strong>certificado internacional personalizado</strong> con tu nombre, firmado por tus tutores.</p>
+    <div style="margin-top:1.75rem">
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">🎓 Quiero mi certificado →</a>
+    </div>
+  </div>
+</div>
+
+<!-- BONOS -->
+<div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:960px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Solo por inscribirte hoy</div>
+      <h2 class="section-title">Recibes <em>16 bonos gratis</em> valorados en US$283</h2>
+    </div>
+    <div class="bonos-tabla">
+      <div class="bt-row">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-0067917.png?format=webp" alt="Curso Jabones Artesanales" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">Curso Jabones Artesanales</div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0067563.png?format=webp" alt="Curso Velas Artesanales" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">Curso Velas Artesanales</div></div>
+      </div>
+      <div class="bt-row">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0068426.png?format=webp" alt="#1 Bonus Bombas de Baño" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#1 Bonus Bombas de Baño</div><p class="bt-desc">Descubre el placer extra con nuestras bombas de baño</p><div class="bt-price"><s>15 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-5-0068143.png?format=webp" alt="#2 Bonus Velas Navideñas" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#2 Bonus Velas Navideñas</div><p class="bt-desc">Ilumina tu Navidad con el aroma de nuestras velas festivas</p><div class="bt-price"><s>20 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0071204.png?format=webp" alt="#3 Bonus Shampoo en Barra" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#3 Bonus Shampoo en Barra</div><p class="bt-desc">Nutre tu cabello y cuida el planeta con shampoo en barra</p><div class="bt-price"><s>10 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0070794.png?format=webp" alt="#4 Bonus Decora tus Envases" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#4 Bonus Decora tus Envases</div><p class="bt-desc">Personaliza tus envases con estilo único y creativo</p><div class="bt-price"><s>16 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-0162555.png?format=webp" alt="#5 Bonus Mantequilla Corporal" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#5 Bonus Mantequilla Corporal</div><p class="bt-desc">Hidrata tu piel a profundidad con nuestra mantequilla corporal</p><div class="bt-price"><s>15 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-8-0070989.png?format=webp" alt="#6 Bonus Velas en Fechas Especiales" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#6 Bonus Velas en Fechas Especiales</div><p class="bt-desc">Celebra cada fecha especial — día de la madre, padre, San Valentín</p><div class="bt-price"><s>25 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-5-0162647.png?format=webp" alt="#7 Bonus Bálsamo Labial" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#7 Bonus Bálsamo Labial</div><p class="bt-desc">Luce labios suaves e hidratados con nuestro bálsamo labial</p><div class="bt-price"><s>18 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0162880.png?format=webp" alt="#8 Bonus Lista de Proveedores" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#8 Bonus Lista de Proveedores</div><p class="bt-desc">Encuentra aquí los mejores proveedores de materiales</p><div class="bt-price"><s>30 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0162787.png?format=webp" alt="#9 Bonus Varitas Difusoras" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#9 Bonus Varitas Difusoras</div><p class="bt-desc">Ambienta tus espacios con estilo usando las varitas difusoras</p><div class="bt-price"><s>17 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0344156.png?format=webp" alt="#10 Bonus Calendario Adviento" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#10 Bonus Calendario Adviento</div><p class="bt-desc">Aprende a realizar esta caja sorpresa para cada día</p><div class="bt-price"><s>20 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-8-0163041.png?format=webp" alt="#11 Bonus Comunidad VIP" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#11 Bonus Comunidad VIP</div><p class="bt-desc">Te apoyamos en cada paso — acceso a comunidad VIP</p><div class="bt-price"><s>20 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-10-0163166.png?format=webp" alt="#12 Bonus Nuevas Empresarias" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#12 Bonus Nuevas Empresarias</div><p class="bt-desc">Empodera tu camino y emprende con nuestro módulo de negocios</p><div class="bt-price"><s>25 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0169876.png?format=webp" alt="#13 Certificado Internacional" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#13 Certificado Internacional</div><p class="bt-desc">Obtén un certificado internacional y expande tus oportunidades</p><div class="bt-price"><s>35 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-11-0164546.png?format=webp" alt="#14 Bonus Manifestación Espiritual" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#14 Bonus Manifestación Espiritual</div><p class="bt-desc">Potencia tus manifestaciones espirituales con nuestras velas</p><div class="bt-price"><s>10 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+      <div class="bt-row bt-row-hidden" style="display:none">
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-3515894.png?format=webp" alt="#15 Cien Recetas de Jabones" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#15 Cien Recetas de Jabones</div><p class="bt-desc">Aprende más de 100 recetas para hacer jabones artesanales</p><div class="bt-price"><s>16 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+        <div class="bt-img"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0541708.png?format=webp" alt="#16 Bonus Desmaquillante Natural" loading="lazy"></div>
+        <div class="bt-txt"><div class="bt-nombre">#16 Bonus Desmaquillante Natural</div><p class="bt-desc">Realiza un desmaquillante totalmente natural sin químicos</p><div class="bt-price"><s>12 USD</s><span class="bt-gratis">GRATIS HOY</span></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;margin-bottom:2rem">
+      <button class="btn-mostrar" id="btn-bonos" onclick="mostrarBonos()">Ver todos los bonos ↓</button>
+    </div>
+    <div style="background:linear-gradient(135deg,#2D1B35,#1A0D22);border-radius:16px;margin-top:1.5rem;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap">
+      <div><h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#FAF0F5;margin-bottom:0.4rem">Valor total del paquete completo</h3><p style="font-size:0.9rem;color:rgba(250,240,245,0.6)">3 cursos + 16 bonos + comunidad VIP + certificado internacional</p></div>
+      <div style="text-align:right"><div style="font-size:1rem;color:rgba(250,240,245,0.38);text-decoration:line-through">Precio normal: US$70</div><div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:#E890BE;line-height:1;font-weight:700">US$35</div><div style="font-size:0.8rem;color:rgba(250,240,245,0.4)">Pago único · Acceso de por vida</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GARANTIA TRIPLE -->
+<div style="background:#1D1225;padding:0 0 3rem;border-bottom:1px solid #3D2545;">
+  <!-- Header dorado -->
+  <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1.25rem 1.5rem;text-align:center;margin-bottom:3rem">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#1A0A00;font-weight:900;margin:0">Confianza Asegurada: Con nuestra garantía de 7 días</h2>
+  </div>
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="gar-grid">
+
+      <div class="gar-card-new">
+        <div class="gar-sello-wrap">
+          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
+  <defs>
+    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#2A2010"/>
+      <stop offset="60%" stop-color="#0D0800"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF8C0"/>
+      <stop offset="25%" stop-color="#F5D020"/>
+      <stop offset="60%" stop-color="#C09010"/>
+      <stop offset="100%" stop-color="#7A5800"/>
+    </radialGradient>
+    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFAD0"/>
+      <stop offset="30%" stop-color="#F0C020"/>
+      <stop offset="65%" stop-color="#B08010"/>
+      <stop offset="100%" stop-color="#705000"/>
+    </radialGradient>
+    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="50%" stop-color="#100D00"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="dropshadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Chispas de fuego decorativas -->
+  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+
+  <!-- Cintas colgantes -->
+  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
+  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
+  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
+
+  <!-- Corona de laureles — rama izquierda -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
+    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
+    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
+    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
+    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
+    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
+    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
+  </g>
+  <!-- Rama derecha -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
+    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
+    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
+    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
+    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
+    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
+    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
+  </g>
+
+  <!-- Anillo dorado exterior grande -->
+  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
+  <!-- Highlight superior -->
+  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
+
+  <!-- Círculo negro interior -->
+  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
+
+  <!-- Borde dorado interior -->
+  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
+  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Estrellas borde superior -->
+  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
+    <text x="110" y="58">★</text>
+    <text x="134" y="64">★</text>
+    <text x="154" y="78">★</text>
+    <text x="86" y="64">★</text>
+    <text x="66" y="78">★</text>
+    <text x="160" y="100">★</text>
+    <text x="60" y="100">★</text>
+  </g>
+
+  <!-- Texto 100% -->
+  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
+
+  <!-- Cinta dorada interior "DE GARANTÍA" -->
+  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
+  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
+  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
+  <!-- Puntas de la cinta -->
+  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
+  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
+  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
+</svg>
+        </div>
+        <h3 class="gar-title-new">Garantía<br>de Satisfacción</h3>
+        <p class="gar-text-new">Si antes de 7 días sientes que no has obtenido el conocimiento y las técnicas necesarias para crear tus primeros productos artesanales de alta calidad, te devolvemos el dinero sin preguntas. Nuestro objetivo es que termines el curso sintiéndote lista para crear.</p>
+      </div>
+
+      <div class="gar-card-new">
+        <div class="gar-sello-wrap">
+          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
+  <defs>
+    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#2A2010"/>
+      <stop offset="60%" stop-color="#0D0800"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF8C0"/>
+      <stop offset="25%" stop-color="#F5D020"/>
+      <stop offset="60%" stop-color="#C09010"/>
+      <stop offset="100%" stop-color="#7A5800"/>
+    </radialGradient>
+    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFAD0"/>
+      <stop offset="30%" stop-color="#F0C020"/>
+      <stop offset="65%" stop-color="#B08010"/>
+      <stop offset="100%" stop-color="#705000"/>
+    </radialGradient>
+    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="50%" stop-color="#100D00"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="dropshadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Chispas de fuego decorativas -->
+  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+
+  <!-- Cintas colgantes -->
+  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
+  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
+  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
+
+  <!-- Corona de laureles — rama izquierda -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
+    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
+    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
+    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
+    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
+    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
+    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
+  </g>
+  <!-- Rama derecha -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
+    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
+    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
+    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
+    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
+    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
+    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
+  </g>
+
+  <!-- Anillo dorado exterior grande -->
+  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
+  <!-- Highlight superior -->
+  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
+
+  <!-- Círculo negro interior -->
+  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
+
+  <!-- Borde dorado interior -->
+  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
+  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Estrellas borde superior -->
+  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
+    <text x="110" y="58">★</text>
+    <text x="134" y="64">★</text>
+    <text x="154" y="78">★</text>
+    <text x="86" y="64">★</text>
+    <text x="66" y="78">★</text>
+    <text x="160" y="100">★</text>
+    <text x="60" y="100">★</text>
+  </g>
+
+  <!-- Texto 100% -->
+  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
+
+  <!-- Cinta dorada interior "DE GARANTÍA" -->
+  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
+  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
+  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
+  <!-- Puntas de la cinta -->
+  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
+  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
+  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
+</svg>
+        </div>
+        <h3 class="gar-title-new">Garantía de Soporte</h3>
+        <p class="gar-text-new">Si antes de los 7 días no recibes apoyo útil y respuestas claras de nuestro equipo o la comunidad, te devolvemos el 100% de tu dinero. Queremos asegurarte una experiencia acompañada en cada paso para que alcances tus objetivos.</p>
+      </div>
+
+      <div class="gar-card-new">
+        <div class="gar-sello-wrap">
+          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
+  <defs>
+    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#2A2010"/>
+      <stop offset="60%" stop-color="#0D0800"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF8C0"/>
+      <stop offset="25%" stop-color="#F5D020"/>
+      <stop offset="60%" stop-color="#C09010"/>
+      <stop offset="100%" stop-color="#7A5800"/>
+    </radialGradient>
+    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFAD0"/>
+      <stop offset="30%" stop-color="#F0C020"/>
+      <stop offset="65%" stop-color="#B08010"/>
+      <stop offset="100%" stop-color="#705000"/>
+    </radialGradient>
+    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="50%" stop-color="#100D00"/>
+      <stop offset="100%" stop-color="#050300"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="dropshadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Chispas de fuego decorativas -->
+  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
+  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
+
+  <!-- Cintas colgantes -->
+  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
+  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
+  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
+
+  <!-- Corona de laureles — rama izquierda -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
+    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
+    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
+    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
+    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
+    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
+    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
+  </g>
+  <!-- Rama derecha -->
+  <g fill="#C9A020" filter="url(#dropshadow)">
+    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
+    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
+    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
+    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
+    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
+    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
+    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
+  </g>
+
+  <!-- Anillo dorado exterior grande -->
+  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
+  <!-- Highlight superior -->
+  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
+
+  <!-- Círculo negro interior -->
+  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
+
+  <!-- Borde dorado interior -->
+  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
+  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Estrellas borde superior -->
+  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
+    <text x="110" y="58">★</text>
+    <text x="134" y="64">★</text>
+    <text x="154" y="78">★</text>
+    <text x="86" y="64">★</text>
+    <text x="66" y="78">★</text>
+    <text x="160" y="100">★</text>
+    <text x="60" y="100">★</text>
+  </g>
+
+  <!-- Texto 100% -->
+  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
+
+  <!-- Cinta dorada interior "DE GARANTÍA" -->
+  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
+  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
+  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
+  <!-- Puntas de la cinta -->
+  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
+  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
+  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
+</svg>
+        </div>
+        <h3 class="gar-title-new">Garantía de<br>Plataforma</h3>
+        <p class="gar-text-new">Si en los primeros 7 días sientes que la plataforma no es fácil de usar o te resulta complicada de navegar, te devolvemos tu inversión. Nuestro diseño está pensado para que encuentres cada recurso de manera rápida y sencilla.</p>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1.15rem;padding:1.1rem 3rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4);letter-spacing:0.02em">¡Quiero comprar de forma segura!</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div style="background:#FAF0F8;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
+  <div style="max-width:720px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2 class="section-title">Resolvemos tus <em>dudas</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Necesito experiencia previa?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">No, el curso está diseñado desde cero. Cada técnica tiene videos paso a paso con explicaciones muy claras. Miles de alumnas sin experiencia hoy tienen su propio negocio artesanal.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo dura el curso?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">El acceso es de por vida. Tiene más de 120 clases y 21 horas de contenido, pero lo estudias a tu propio ritmo — sin fechas límite ni horarios fijos.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cómo recibo el acceso al curso?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">Una vez completado el pago recibes un correo con instrucciones para acceder directamente en la plataforma Hotmart. El acceso es inmediato.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Qué métodos de pago aceptan?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">Tarjetas de débito y crédito, pagos en efectivo (OXXO, bancos, corresponsales) y más. La plataforma detecta tu país y muestra los métodos disponibles para tu ubicación.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Es seguro el pago?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">Sí. El pago se procesa a través de Hotmart, plataforma digital operando en más de 160 países con certificados de seguridad de última generación. Tus datos están 100% protegidos.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Desde qué dispositivos puedo acceder?<div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div></div><div class="faq-a">Desde cualquier dispositivo — computadora, tablet o celular, con cualquier sistema operativo. También puedes descargar la app de Hotmart para estudiar sin conexión.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div id="cta" style="background:linear-gradient(160deg,#2D1B35,#1A0D22);padding:5rem 1.5rem;text-align:center;">
+  <div style="max-width:700px;margin:0 auto">
+    <div class="section-label" style="color:#E8A8C8">Tu momento es ahora</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:#FAF0F5;line-height:1.2;margin-bottom:1rem">Tu negocio<br><em style="color:#E890BE">empieza hoy</em></h2>
+    <p style="color:rgba(250,240,245,0.6);margin:0 auto 2.5rem;max-width:480px;font-size:1rem">Únete a más de 2,000 mujeres que ya crearon su propio negocio desde casa. Acceso inmediato, sin riesgo.</p>
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(232,144,190,0.25);border-radius:16px;padding:2rem 2.5rem;display:inline-block;margin-bottom:1.5rem">
+      <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(250,240,245,0.4);margin-bottom:0.5rem">Precio especial de lanzamiento</div>
+      <div style="font-size:1.1rem;color:rgba(250,240,245,0.35);text-decoration:line-through;margin-bottom:0.25rem">US$70</div>
+      <div style="font-family:'Playfair Display',serif;font-size:4.5rem;color:#E890BE;line-height:1;font-weight:700">US$35</div>
+      <div style="font-size:0.85rem;color:rgba(250,240,245,0.5);margin-top:0.4rem">Pago único · Acceso de por vida · 16 bonos incluidos</div>
+    </div>
+    <div>
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block;font-size:1.2rem;padding:1.2rem 3.5rem">🎉 ¡Quiero inscribirme ahora!</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem">
+      <span style="font-size:0.8rem;color:rgba(250,240,245,0.38)">🔒 Pago 100% seguro</span>
+      <span style="font-size:0.8rem;color:rgba(250,240,245,0.38)">🛡️ Garantía triple 7 días</span>
+      <span style="font-size:0.8rem;color:rgba(250,240,245,0.38)">♾️ Acceso de por vida</span>
+      <span style="font-size:0.8rem;color:rgba(250,240,245,0.38)">📱 Desde cualquier dispositivo</span>
+    </div>
+    <p style="font-size:0.72rem;color:rgba(250,240,245,0.25);margin-top:2rem;max-width:600px;margin-left:auto;margin-right:auto">Este sitio no es parte de Facebook Inc. Los testimonios mencionados son de personas reales que tomaron el curso voluntariamente. Los resultados individuales pueden variar.</p>
+  </div>
+</div>
+
+<footer style="background:#130C1A;padding:2rem 1.5rem;text-align:center">
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.2)">© 2026 Manitas Creativas · El Arte Creativo · Todos los derechos reservados · Plataforma segura Hotmart</p>
+</footer>
+
+<script>
+
+
+function mostrarBonos(){
+  document.querySelectorAll('.bt-row-hidden').forEach(function(el){el.style.display='grid'});
+  document.getElementById('btn-bonos').style.display='none';
+}
+function mostrarMas(btnId){
+  var btn=document.getElementById(btnId);
+  var grid=btn.parentElement.previousElementSibling;
+  grid.querySelectorAll(".tec-extra").forEach(function(el){el.style.display="block"});
+  btn.parentElement.style.display="none";
+}
+
+// CARRUSEL TESTIMONIOS
+(function(){
+  var track = document.getElementById('testimonios-track');
+  var dotsContainer = document.getElementById('carousel-dots');
+  if(!track) return;
+  var slides = track.querySelectorAll('.carousel-slide');
+  var perView = window.innerWidth <= 600 ? 1 : 3;
+  var total = slides.length;
+  var maxIndex = Math.max(0, total - perView);
+  var current = 0;
+  var autoTimer;
+
+  // Crear dots
+  var numDots = Math.ceil(total / perView);
+  for(var i=0;i<numDots;i++){
+    var d = document.createElement('div');
+    d.className = 'car-dot' + (i===0?' active':'');
+    d.setAttribute('data-i', i);
+    d.onclick = (function(idx){return function(){goTo(idx*perView)};})(i);
+    dotsContainer.appendChild(d);
+  }
+
+  function updateDots(){
+    var dotIdx = Math.round(current/perView);
+    dotsContainer.querySelectorAll('.car-dot').forEach(function(d,i){
+      d.classList.toggle('active', i===dotIdx);
+    });
+  }
+
+  function goTo(idx){
+    current = Math.max(0, Math.min(idx, maxIndex));
+    var slideW = slides[0].offsetWidth + 16;
+    track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+    updateDots();
+  }
+
+  window.moveCarousel = function(dir){
+    clearInterval(autoTimer);
+    goTo(current + dir * perView);
+    startAuto();
+  };
+
+  function startAuto(){
+    autoTimer = setInterval(function(){
+      if(current >= maxIndex) goTo(0); else goTo(current + perView);
+    }, 3500);
+  }
+  startAuto();
+})();
+
+function toggleFaq(el){
+  var item=el.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen)item.classList.add('open');
+}
+function showTab(tab, btn){
+  document.querySelectorAll('.tab-content').forEach(function(t){t.style.display='none'});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('tab-'+tab).style.display='block';
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
