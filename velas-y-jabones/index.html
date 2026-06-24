@@ -21,7 +21,7 @@
   --text-muted:#6B6459;
   --border:#E8DDD0;
 }
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden;max-width:100vw}
 
 /* ======= HERO ======= */
 .hero{
@@ -222,6 +222,18 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
   .bonos-total{flex-direction:column;text-align:center}
   .bonos-total-price{text-align:center}
 }
+
+/* MOBILE OVERFLOW FIX */
+*{max-width:100%;box-sizing:border-box}
+img,svg,video,iframe{max-width:100%}
+@media(max-width:600px){
+  .excusa-card{flex-direction:column;gap:0.75rem}
+  .bt-row{grid-template-columns:1fr 1fr!important}
+  .modulos-grid{grid-template-columns:1fr!important}
+  .testimonios-grid{grid-template-columns:1fr!important}
+  .tecnicas-grid{grid-template-columns:repeat(2,1fr)!important}
+  section, div[style*="max-width"]{padding-left:1rem!important;padding-right:1rem!important}
+}
 @keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
 
 /* SI CARDS */
@@ -306,6 +318,18 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
 .faq-a{display:none;padding:0 1.4rem 1.1rem;font-size:0.88rem;color:#5A3A5A;line-height:1.7}
 .faq-item.open .faq-a{display:block}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* MOBILE OVERFLOW FIX */
+*{max-width:100%;box-sizing:border-box}
+img,svg,video,iframe{max-width:100%}
+@media(max-width:600px){
+  .excusa-card{flex-direction:column;gap:0.75rem}
+  .bt-row{grid-template-columns:1fr 1fr!important}
+  .modulos-grid{grid-template-columns:1fr!important}
+  .testimonios-grid{grid-template-columns:1fr!important}
+  .tecnicas-grid{grid-template-columns:repeat(2,1fr)!important}
+  section, div[style*="max-width"]{padding-left:1rem!important;padding-right:1rem!important}
+}
 @keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
 
 /* CARRUSEL TESTIMONIOS */
@@ -350,6 +374,33 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
 
 .gar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 @media(max-width:700px){.gar-grid{grid-template-columns:1fr}}
+
+/* ES PARA TI */
+.spt-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.spt-card{
+  background:#FFFEF9;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1rem 1.1rem;
+  display:flex;align-items:center;gap:12px;
+}
+.spt-check{
+  width:28px;height:28px;
+  background:linear-gradient(135deg,#B5357A,#D4608E);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:#fff;font-size:13px;font-weight:900;
+}
+.spt-card p{
+  font-size:0.88rem;color:#2C1A2E;
+  line-height:1.45;margin:0;
+}
+@media(max-width:600px){
+  .spt-grid{grid-template-columns:1fr}
+  .spt-card{padding:0.9rem 1rem}
+  .spt-card p{font-size:0.92rem}
+}
 </style>
 </head>
 <body>
@@ -574,7 +625,7 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
       </div>
     </div>
     <div style="text-align:center;margin-top:2rem">
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">¡No tengo estas excusas, quiero empezar! →</a>
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block;white-space:normal;text-align:center;max-width:100%;padding:1rem 1.5rem;line-height:1.4">¡Quiero empezar ahora! →</a>
     </div>
   </div>
 </div>
@@ -629,10 +680,10 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
 
     <!-- DIPLOMA HTML -->
     <div style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
-      <div style="border:1.5px solid #C9A84C;padding:2.5rem 3rem;position:relative;background:#fffdf5">
+      <div style="border:1.5px solid #C9A84C;padding:2rem 1.5rem;position:relative;background:#fffdf5">
 
         <!-- Sello dorado premium -->
-        <div style="position:absolute;top:1.2rem;left:1.8rem;width:90px;height:90px">
+        <div style="position:absolute;top:1rem;left:1.2rem;width:70px;height:70px">
           <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="sg1" cx="40%" cy="35%" r="60%">
@@ -827,351 +878,113 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
 </div>
 
 <!-- GARANTIA TRIPLE -->
-<div style="background:#1D1225;padding:0 0 3rem;border-bottom:1px solid #3D2545;">
-  <!-- Header dorado -->
-  <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1.25rem 1.5rem;text-align:center;margin-bottom:3rem">
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#1A0A00;font-weight:900;margin:0">Confianza Asegurada: Con nuestra garantía de 7 días</h2>
-  </div>
-  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="gar-grid">
+<div style="background:#1D1225;padding:4rem 1.5rem;border-bottom:1px solid #3D2545;">
+  <div style="max-width:800px;margin:0 auto;text-align:center">
 
-      <div class="gar-card-new">
-        <div class="gar-sello-wrap">
-          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
-  <defs>
-    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#2A2010"/>
-      <stop offset="60%" stop-color="#0D0800"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFF8C0"/>
-      <stop offset="25%" stop-color="#F5D020"/>
-      <stop offset="60%" stop-color="#C09010"/>
-      <stop offset="100%" stop-color="#7A5800"/>
-    </radialGradient>
-    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFAD0"/>
-      <stop offset="30%" stop-color="#F0C020"/>
-      <stop offset="65%" stop-color="#B08010"/>
-      <stop offset="100%" stop-color="#705000"/>
-    </radialGradient>
-    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#3A3020"/>
-      <stop offset="50%" stop-color="#100D00"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="dropshadow">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
-    </filter>
-  </defs>
-
-  <!-- Chispas de fuego decorativas -->
-  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-
-  <!-- Cintas colgantes -->
-  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
-  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
-  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
-
-  <!-- Corona de laureles — rama izquierda -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
-    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
-    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
-    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
-    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
-    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
-    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
-  </g>
-  <!-- Rama derecha -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
-    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
-    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
-    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
-    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
-    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
-    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
-  </g>
-
-  <!-- Anillo dorado exterior grande -->
-  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
-  <!-- Highlight superior -->
-  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
-
-  <!-- Círculo negro interior -->
-  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
-
-  <!-- Borde dorado interior -->
-  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
-  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
-
-  <!-- Estrellas borde superior -->
-  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
-    <text x="110" y="58">★</text>
-    <text x="134" y="64">★</text>
-    <text x="154" y="78">★</text>
-    <text x="86" y="64">★</text>
-    <text x="66" y="78">★</text>
-    <text x="160" y="100">★</text>
-    <text x="60" y="100">★</text>
-  </g>
-
-  <!-- Texto 100% -->
-  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
-
-  <!-- Cinta dorada interior "DE GARANTÍA" -->
-  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
-  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
-  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
-  <!-- Puntas de la cinta -->
-  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
-  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
-  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
-</svg>
-        </div>
-        <h3 class="gar-title-new">Garantía<br>de Satisfacción</h3>
-        <p class="gar-text-new">Si antes de 7 días sientes que no has obtenido el conocimiento y las técnicas necesarias para crear tus primeros productos artesanales de alta calidad, te devolvemos el dinero sin preguntas. Nuestro objetivo es que termines el curso sintiéndote lista para crear.</p>
-      </div>
-
-      <div class="gar-card-new">
-        <div class="gar-sello-wrap">
-          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
-  <defs>
-    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#2A2010"/>
-      <stop offset="60%" stop-color="#0D0800"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFF8C0"/>
-      <stop offset="25%" stop-color="#F5D020"/>
-      <stop offset="60%" stop-color="#C09010"/>
-      <stop offset="100%" stop-color="#7A5800"/>
-    </radialGradient>
-    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFAD0"/>
-      <stop offset="30%" stop-color="#F0C020"/>
-      <stop offset="65%" stop-color="#B08010"/>
-      <stop offset="100%" stop-color="#705000"/>
-    </radialGradient>
-    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#3A3020"/>
-      <stop offset="50%" stop-color="#100D00"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="dropshadow">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
-    </filter>
-  </defs>
-
-  <!-- Chispas de fuego decorativas -->
-  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-
-  <!-- Cintas colgantes -->
-  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
-  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
-  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
-
-  <!-- Corona de laureles — rama izquierda -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
-    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
-    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
-    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
-    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
-    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
-    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
-  </g>
-  <!-- Rama derecha -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
-    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
-    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
-    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
-    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
-    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
-    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
-  </g>
-
-  <!-- Anillo dorado exterior grande -->
-  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
-  <!-- Highlight superior -->
-  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
-
-  <!-- Círculo negro interior -->
-  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
-
-  <!-- Borde dorado interior -->
-  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
-  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
-
-  <!-- Estrellas borde superior -->
-  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
-    <text x="110" y="58">★</text>
-    <text x="134" y="64">★</text>
-    <text x="154" y="78">★</text>
-    <text x="86" y="64">★</text>
-    <text x="66" y="78">★</text>
-    <text x="160" y="100">★</text>
-    <text x="60" y="100">★</text>
-  </g>
-
-  <!-- Texto 100% -->
-  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
-
-  <!-- Cinta dorada interior "DE GARANTÍA" -->
-  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
-  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
-  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
-  <!-- Puntas de la cinta -->
-  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
-  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
-  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
-</svg>
-        </div>
-        <h3 class="gar-title-new">Garantía de Soporte</h3>
-        <p class="gar-text-new">Si antes de los 7 días no recibes apoyo útil y respuestas claras de nuestro equipo o la comunidad, te devolvemos el 100% de tu dinero. Queremos asegurarte una experiencia acompañada en cada paso para que alcances tus objetivos.</p>
-      </div>
-
-      <div class="gar-card-new">
-        <div class="gar-sello-wrap">
-          <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:190px;display:block;margin:0 auto 1.25rem">
-  <defs>
-    <radialGradient id="bgSello" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#2A2010"/>
-      <stop offset="60%" stop-color="#0D0800"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <radialGradient id="goldOuter" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFF8C0"/>
-      <stop offset="25%" stop-color="#F5D020"/>
-      <stop offset="60%" stop-color="#C09010"/>
-      <stop offset="100%" stop-color="#7A5800"/>
-    </radialGradient>
-    <radialGradient id="goldInner" cx="38%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFFAD0"/>
-      <stop offset="30%" stop-color="#F0C020"/>
-      <stop offset="65%" stop-color="#B08010"/>
-      <stop offset="100%" stop-color="#705000"/>
-    </radialGradient>
-    <radialGradient id="blackCircle" cx="40%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#3A3020"/>
-      <stop offset="50%" stop-color="#100D00"/>
-      <stop offset="100%" stop-color="#050300"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="dropshadow">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.7"/>
-    </filter>
-  </defs>
-
-  <!-- Chispas de fuego decorativas -->
-  <line x1="55" y1="45" x2="48" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="60" y1="38" x2="55" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <line x1="165" y1="45" x2="172" y2="28" stroke="#FF8C00" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <line x1="160" y1="38" x2="165" y2="22" stroke="#FFA500" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
-  <circle cx="50" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="57" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-  <circle cx="170" cy="25" r="2.5" fill="#FF6600" opacity="0.8"/>
-  <circle cx="163" cy="18" r="1.8" fill="#FFA500" opacity="0.7"/>
-
-  <!-- Cintas colgantes -->
-  <polygon points="88,188 96,210 110,200 124,210 132,188" fill="#B8860B"/>
-  <polygon points="90,188 97,207 110,198 123,207 130,188" fill="#D4A820"/>
-  <line x1="110" y1="188" x2="110" y2="210" stroke="#8B6508" stroke-width="1"/>
-
-  <!-- Corona de laureles — rama izquierda -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="42" cy="158" rx="12" ry="6" transform="rotate(-40,42,158)"/>
-    <ellipse cx="34" cy="142" rx="12" ry="6" transform="rotate(-30,34,142)"/>
-    <ellipse cx="30" cy="124" rx="12" ry="6" transform="rotate(-20,30,124)"/>
-    <ellipse cx="30" cy="106" rx="12" ry="6" transform="rotate(-10,30,106)"/>
-    <ellipse cx="34" cy="88" rx="12" ry="6" transform="rotate(0,34,88)"/>
-    <ellipse cx="42" cy="72" rx="12" ry="6" transform="rotate(12,42,72)"/>
-    <ellipse cx="54" cy="59" rx="12" ry="6" transform="rotate(24,54,59)"/>
-  </g>
-  <!-- Rama derecha -->
-  <g fill="#C9A020" filter="url(#dropshadow)">
-    <ellipse cx="178" cy="158" rx="12" ry="6" transform="rotate(40,178,158)"/>
-    <ellipse cx="186" cy="142" rx="12" ry="6" transform="rotate(30,186,142)"/>
-    <ellipse cx="190" cy="124" rx="12" ry="6" transform="rotate(20,190,124)"/>
-    <ellipse cx="190" cy="106" rx="12" ry="6" transform="rotate(10,190,106)"/>
-    <ellipse cx="186" cy="88" rx="12" ry="6" transform="rotate(0,186,88)"/>
-    <ellipse cx="178" cy="72" rx="12" ry="6" transform="rotate(-12,178,72)"/>
-    <ellipse cx="166" cy="59" rx="12" ry="6" transform="rotate(-24,166,59)"/>
-  </g>
-
-  <!-- Anillo dorado exterior grande -->
-  <circle cx="110" cy="115" r="76" fill="url(#goldOuter)" filter="url(#dropshadow)"/>
-  <!-- Highlight superior -->
-  <ellipse cx="95" cy="75" rx="28" ry="14" fill="white" opacity="0.08"/>
-
-  <!-- Círculo negro interior -->
-  <circle cx="110" cy="115" r="66" fill="url(#blackCircle)"/>
-
-  <!-- Borde dorado interior -->
-  <circle cx="110" cy="115" r="66" fill="none" stroke="#D4A820" stroke-width="2"/>
-  <circle cx="110" cy="115" r="60" fill="none" stroke="#8B6508" stroke-width="1" stroke-dasharray="3,2"/>
-
-  <!-- Estrellas borde superior -->
-  <g fill="#D4A820" font-size="9" font-family="serif" text-anchor="middle">
-    <text x="110" y="58">★</text>
-    <text x="134" y="64">★</text>
-    <text x="154" y="78">★</text>
-    <text x="86" y="64">★</text>
-    <text x="66" y="78">★</text>
-    <text x="160" y="100">★</text>
-    <text x="60" y="100">★</text>
-  </g>
-
-  <!-- Texto 100% -->
-  <text x="110" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="36" font-weight="900" fill="url(#goldInner)" filter="url(#glow)">100%</text>
-
-  <!-- Cinta dorada interior "DE GARANTÍA" -->
-  <path d="M46,128 Q110,142 174,128" fill="url(#goldOuter)" stroke="none"/>
-  <path d="M46,128 Q110,148 174,128 L174,143 Q110,163 46,143 Z" fill="url(#goldOuter)"/>
-  <path d="M48,130 Q110,150 172,130 L172,141 Q110,161 48,141 Z" fill="#C9A020"/>
-  <!-- Puntas de la cinta -->
-  <polygon points="46,128 36,135 46,143" fill="#B8860B"/>
-  <polygon points="174,128 184,135 174,143" fill="#B8860B"/>
-  <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#1A0A00" letter-spacing="2">DE GARANTÍA</text>
-</svg>
-        </div>
-        <h3 class="gar-title-new">Garantía de<br>Plataforma</h3>
-        <p class="gar-text-new">Si en los primeros 7 días sientes que la plataforma no es fácil de usar o te resulta complicada de navegar, te devolvemos tu inversión. Nuestro diseño está pensado para que encuentres cada recurso de manera rápida y sencilla.</p>
-      </div>
-
+    <!-- Header dorado -->
+    <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1.25rem 2rem;border-radius:12px;margin-bottom:2.5rem">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.8rem);color:#1A0A00;font-weight:900;margin:0">Confianza Asegurada: Garantía de 7 días</h2>
     </div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1.15rem;padding:1.1rem 3rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4);letter-spacing:0.02em">¡Quiero comprar de forma segura!</a>
+
+    <!-- Sello único centrado -->
+    <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:185px;display:block;margin:0 auto 1.5rem">
+  <defs>
+    <radialGradient id="gOuter" cx="45%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFF5A0"/>
+      <stop offset="35%" stop-color="#D4A017"/>
+      <stop offset="70%" stop-color="#A07800"/>
+      <stop offset="100%" stop-color="#6A5000"/>
+    </radialGradient>
+    <radialGradient id="gInnerRing" cx="45%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFE860"/>
+      <stop offset="40%" stop-color="#C89010"/>
+      <stop offset="100%" stop-color="#7A5800"/>
+    </radialGradient>
+    <radialGradient id="gBlack" cx="42%" cy="32%" r="58%">
+      <stop offset="0%" stop-color="#3A3020"/>
+      <stop offset="45%" stop-color="#0D0A00"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="gBanner" cx="50%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#F0C030"/>
+      <stop offset="50%" stop-color="#C08000"/>
+      <stop offset="100%" stop-color="#7A5000"/>
+    </radialGradient>
+    <filter id="sh2">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="shine">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Sombra base -->
+  <ellipse cx="140" cy="240" rx="75" ry="10" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Forma dentada exterior negra -->
+  <g filter="url(#sh2)">
+    <path d="M140,18 L149,30 L163,24 L165,38 L180,38 L175,52 L190,57 L179,68 L190,78 L176,83 L182,98 L167,97 L167,113 L152,106 L145,121 L134,108 L121,119 L116,104 L101,109 L103,93 L88,92 L96,78 L83,70 L96,61 L87,49 L103,46 L101,31 L116,36 L122,22 Z" fill="#0D0A00"/>
+    <!-- Segunda capa dentada (más puntas) -->
+    <path d="M140,22 L147,31 L159,26 L162,39 L176,39 L172,51 L186,57 L176,66 L185,76 L172,81 L177,95 L163,94 L162,109 L149,103 L143,117 L132,104 L120,116 L115,101 L101,105 L103,90 L89,89 L98,77 L86,68 L99,61 L91,48 L105,47 L104,32 L117,38 L123,24 Z" fill="#1A1500" opacity="0.6"/>
+  </g>
+
+  <!-- Anillo dorado exterior -->
+  <circle cx="140" cy="110" r="88" fill="url(#gOuter)" filter="url(#sh2)"/>
+
+  <!-- Anillo negro medio -->
+  <circle cx="140" cy="110" r="80" fill="#0D0A00"/>
+
+  <!-- Punteado dorado -->
+  <circle cx="140" cy="110" r="79" fill="none" stroke="#D4A017" stroke-width="1" stroke-dasharray="2.5,3"/>
+
+  <!-- Anillo dorado interior -->
+  <circle cx="140" cy="110" r="72" fill="url(#gInnerRing)"/>
+
+  <!-- Disco negro central -->
+  <circle cx="140" cy="110" r="62" fill="url(#gBlack)"/>
+
+  <!-- Highlight 3D superior -->
+  <ellipse cx="126" cy="72" rx="28" ry="16" fill="white" opacity="0.12"/>
+
+  <!-- Texto circular "GARANTÍA" arriba -->
+  <path id="arcTop2" d="M 82,95 A 60,60 0 0,1 198,95" fill="none"/>
+  <text font-size="11" font-weight="900" fill="#C89010" font-family="Arial,sans-serif" letter-spacing="4">
+    <textPath href="#arcTop2" startOffset="10%">GARANTÍA  ★  GARANTÍA</textPath>
+  </text>
+
+  <!-- Texto 100% -->
+  <text x="140" y="105" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="36" font-weight="900" fill="url(#gOuter)" filter="url(#shine)">100%</text>
+
+  <!-- Estrellas inferiores dentro del disco -->
+  <text x="140" y="128" text-anchor="middle" font-size="10" fill="#C89010" font-family="serif">★ ★ ★ ★ ★</text>
+
+  <!-- CINTA / BANNER dorado horizontal -->
+  <path d="M52,148 Q140,162 228,148 L228,172 Q140,186 52,172 Z" fill="url(#gBanner)" filter="url(#sh2)"/>
+  <!-- Borde superior cinta -->
+  <path d="M52,148 Q140,160 228,148" fill="none" stroke="#FFE050" stroke-width="1.5" opacity="0.6"/>
+  <!-- Borde inferior cinta -->
+  <path d="M52,172 Q140,184 228,172" fill="none" stroke="#7A5000" stroke-width="1"/>
+  <!-- Puntas izq/der de cinta -->
+  <polygon points="52,148 36,158 52,172" fill="#8B6000"/>
+  <polygon points="228,148 244,158 228,172" fill="#8B6000"/>
+  <!-- Línea separadora en cinta -->
+  <path d="M55,153 Q140,165 225,153" fill="none" stroke="#0D0A00" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Texto en cinta -->
+  <text x="140" y="165" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#0D0A00" letter-spacing="2">SATISFACCIÓN</text>
+</svg>
+
+    <!-- Texto de garantía unificado -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(212,168,67,0.2);border-radius:16px;padding:2rem;max-width:580px;margin:0 auto 2rem">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#FAF0F5;margin-bottom:1rem;font-weight:700">100% de satisfacción garantizada</h3>
+      <p style="font-size:0.92rem;color:rgba(250,240,245,0.72);line-height:1.8;margin-bottom:0.75rem">Si en los primeros <strong style="color:#D4A843">7 días</strong> sientes que no obtuviste el conocimiento necesario, no recibes el soporte esperado, o la plataforma no es fácil de usar —</p>
+      <p style="font-size:1rem;color:#FAF0F5;font-weight:700;font-family:'Playfair Display',serif;font-style:italic">te devolvemos cada peso. Sin preguntas. Sin complicaciones.</p>
     </div>
+
+    <!-- Botón -->
+    <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1.1rem;padding:1.1rem 3rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4)">¡Quiero comprar de forma segura!</a>
+
   </div>
 </div>
 
