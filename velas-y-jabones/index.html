@@ -351,6 +351,15 @@ img,svg,video,iframe{max-width:100%}
 /* BONOS TABLA */
 .bonos-tabla{border:1px solid #EDD5E8;border-radius:16px;overflow:hidden;margin-bottom:2rem}
 .bt-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:1px solid #EDD5E8}
+@media(max-width:600px){
+  .bt-row{grid-template-columns:1fr 1fr!important}
+  .bt-img img{height:110px!important}
+  .bt-txt{padding:0.6rem 0.75rem!important}
+  .bt-nombre{font-size:0.75rem!important}
+  .bt-desc{display:none}
+  .bt-price s{font-size:10px!important}
+  .bt-gratis{font-size:11px!important}
+}
 .bt-row:last-child{border-bottom:none}
 .bt-img{background:#FAF0F8;display:flex;align-items:center;justify-content:center;padding:0;border-right:1px solid #EDD5E8;min-height:140px}
 .bt-img img{width:100%;height:140px;object-fit:contain;display:block;background:#FAF0F8;padding:6px}
@@ -400,6 +409,16 @@ img,svg,video,iframe{max-width:100%}
   .spt-grid{grid-template-columns:1fr}
   .spt-card{padding:0.9rem 1rem}
   .spt-card p{font-size:0.92rem}
+}
+@media(max-width:640px){
+  /* Diploma cuadrado en móvil */
+  .diploma-wrap{max-width:100%!important;border-radius:10px}
+  .diploma-inner{padding:1.25rem 1rem!important}
+  .diploma-inner h1{font-size:1.6rem!important}
+  .diploma-nombre{font-size:1.6rem!important}
+  .diploma-firmas{gap:0.5rem!important}
+  .diploma-firma-text{min-width:80px!important;font-size:1.1rem!important}
+  .diploma-wave{height:40px!important;margin:-1.25rem -1rem -1.25rem!important}
 }
 </style>
 </head>
@@ -679,8 +698,8 @@ img,svg,video,iframe{max-width:100%}
     <h3 style="font-size:clamp(0.9rem,2vw,1.15rem);color:#2C1A2E;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2.5rem">Certificado personalizado con tu nombre!</h3>
 
     <!-- DIPLOMA HTML -->
-    <div style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
-      <div style="border:1.5px solid #C9A84C;padding:2rem 1.5rem;position:relative;background:#fffdf5">
+    <div class="diploma-wrap" style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
+      <div class="diploma-inner" style="border:1.5px solid #C9A84C;padding:2rem 1.5rem;position:relative;background:#fffdf5">
 
         <!-- Sello dorado premium -->
         <div style="position:absolute;top:1rem;left:1.2rem;width:70px;height:70px">
@@ -878,117 +897,21 @@ img,svg,video,iframe{max-width:100%}
 </div>
 
 <!-- GARANTIA -->
-<div style="background:#0D0B14;padding:4rem 1.5rem;border-top:1px solid rgba(212,160,60,0.15);border-bottom:1px solid rgba(212,160,60,0.15);">
-  <div style="max-width:700px;margin:0 auto">
-
-    <!-- Header dorado -->
-    <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1.25rem 1.5rem;text-align:center;border-radius:12px 12px 0 0;margin-bottom:0">
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.8rem);color:#1A0A00;font-weight:900;margin:0">Tu inversión está 100% protegida</h2>
+<div style="background:#0D0B14;padding:2.5rem 1.5rem;border-top:1px solid rgba(212,160,60,0.15);border-bottom:1px solid rgba(212,160,60,0.15);">
+  <div style="max-width:680px;margin:0 auto">
+    <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1rem 1.5rem;text-align:center;border-radius:12px 12px 0 0">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:#1A0A00;font-weight:900;margin:0">Tu inversión está 100% protegida</h2>
     </div>
-
-    <!-- Card principal -->
-    <div style="background:linear-gradient(160deg,#1A1010,#0D0808);border:1px solid rgba(212,160,60,0.2);border-radius:0 0 16px 16px;padding:2.5rem 2rem;text-align:center">
-
-      <!-- Sello -->
-      <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:200px;display:block;margin:0 auto">
-  <defs>
-    <radialGradient id="gOuter" cx="50%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#FFF5A0"/>
-      <stop offset="35%" stop-color="#D4A020"/>
-      <stop offset="70%" stop-color="#A07010"/>
-      <stop offset="100%" stop-color="#604000"/>
-    </radialGradient>
-    <radialGradient id="gInner" cx="42%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#3A3010"/>
-      <stop offset="40%" stop-color="#1A1200"/>
-      <stop offset="100%" stop-color="#080600"/>
-    </radialGradient>
-    <radialGradient id="gGold" cx="42%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#FFF8C0"/>
-      <stop offset="30%" stop-color="#E8B820"/>
-      <stop offset="70%" stop-color="#B08010"/>
-      <stop offset="100%" stop-color="#705000"/>
-    </radialGradient>
-    <radialGradient id="gBanner" cx="50%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#2A1A00"/>
-      <stop offset="100%" stop-color="#0A0800"/>
-    </radialGradient>
-    <filter id="sh2"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.55"/></filter>
-    <filter id="sh3"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.4"/></filter>
-  </defs>
-
-  <!-- Forma dentada exterior negra -->
-  <g filter="url(#sh2)">
-    <path d="M140,12 L150,24 L164,18 L168,33 L184,32 L182,48 L197,52 L190,66 L203,75 L191,85 L200,97 L185,102 L188,118 L173,118 L170,134 L156,128 L147,143 L140,133 L133,143 L124,128 L110,134 L107,118 L92,118 L95,102 L80,97 L89,85 L77,75 L90,66 L83,52 L98,48 L96,32 L112,33 L116,18 L130,24 Z" fill="#0A0800"/>
-  </g>
-
-  <!-- Anillo dorado exterior -->
-  <circle cx="140" cy="92" r="84" fill="url(#gOuter)" filter="url(#sh2)"/>
-
-  <!-- Anillo negro medio con puntitos -->
-  <circle cx="140" cy="92" r="76" fill="#0A0800"/>
-  <circle cx="140" cy="92" r="76" fill="none" stroke="#D4A020" stroke-width="1.5" stroke-dasharray="3,3"/>
-  <circle cx="140" cy="92" r="70" fill="none" stroke="#D4A020" stroke-width="0.8"/>
-
-  <!-- Fondo dorado interior -->
-  <circle cx="140" cy="92" r="65" fill="url(#gGold)"/>
-
-  <!-- Disco negro central con brillo -->
-  <circle cx="140" cy="78" r="42" fill="url(#gInner)"/>
-  <ellipse cx="130" cy="60" rx="18" ry="10" fill="white" opacity="0.12"/>
-
-  <!-- Texto GARANTÍA circular arriba -->
-  <path id="arc1" d="M 80,80 A 62,62 0 0,1 200,80" fill="none"/>
-  <text font-size="10" font-weight="900" fill="#C8A010" font-family="Arial,sans-serif" letter-spacing="4">
-    <textPath href="#arc1" startOffset="8%">GARANTÍA · GARANTÍA</textPath>
-  </text>
-
-  <!-- 100% en el disco negro -->
-  <text x="140" y="82" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="28" font-weight="900" fill="url(#gGold)">100%</text>
-
-  <!-- Estrellas bajo el 100% -->
-  <text x="140" y="110" text-anchor="middle" font-size="9" fill="#C8A010" font-family="serif" letter-spacing="4">★ ★ ★ ★ ★</text>
-
-  <!-- Cinta negra con texto dorado GARANTIZADO -->
-  <g filter="url(#sh3)">
-    <!-- Puntas izquierda -->
-    <polygon points="54,125 44,133 54,142" fill="#1A1200"/>
-    <!-- Cuerpo cinta -->
-    <rect x="54" y="122" width="172" height="22" rx="2" fill="#0A0800"/>
-    <!-- Borde dorado superior e inferior -->
-    <rect x="54" y="122" width="172" height="2" fill="#D4A020"/>
-    <rect x="54" y="140" width="172" height="2" fill="#D4A020"/>
-    <!-- Puntas derecha -->
-    <polygon points="226,125 236,133 226,142" fill="#1A1200"/>
-    <!-- Texto -->
-    <text x="140" y="137" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="13" font-weight="900" fill="#D4A020" letter-spacing="3">GARANTIZADO</text>
-  </g>
-</svg>
-
-      <!-- Texto garantía unificado -->
-      <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#FAF0F5;margin:1rem 0 0.75rem;line-height:1.3">Garantía de satisfacción, soporte<br>y plataforma — 7 días</h3>
-
-      <p style="font-size:0.95rem;color:rgba(250,240,245,0.72);line-height:1.75;max-width:520px;margin:0 auto 1.5rem">
-        Si en los primeros <strong style="color:#D4A843">7 días</strong> sientes que el curso no cumplió tus expectativas —
-        ya sea por el contenido, el soporte o la plataforma —
-        te devolvemos <strong style="color:#D4A843">cada peso</strong> sin preguntas y sin complicaciones.
+    <div style="background:linear-gradient(160deg,#1A1010,#0D0808);border:1px solid rgba(212,160,60,0.2);border-radius:0 0 16px 16px;padding:1.75rem 1.5rem;text-align:center">
+      <p style="font-size:0.95rem;color:rgba(250,240,245,0.75);line-height:1.7;max-width:480px;margin:0 auto 1.25rem">
+        Si en los primeros <strong style="color:#D4A843">7 días</strong> el curso no cumple tus expectativas — ya sea por el contenido, el soporte o la plataforma — te devolvemos <strong style="color:#D4A843">cada peso</strong> sin preguntas.
       </p>
-
-      <!-- Bullets -->
-      <div style="display:flex;flex-direction:column;gap:0.6rem;max-width:380px;margin:0 auto 2rem;text-align:left">
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:rgba(250,240,245,0.7)">
-          <span style="color:#D4A843;font-size:1rem">✓</span> Sin preguntas ni formularios complicados
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:rgba(250,240,245,0.7)">
-          <span style="color:#D4A843;font-size:1rem">✓</span> Devolución completa — no parcial
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:rgba(250,240,245,0.7)">
-          <span style="color:#D4A843;font-size:1rem">✓</span> Procesado a través de Hotmart de forma segura
-        </div>
+      <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Sin formularios</span>
+        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Devolución completa</span>
+        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Vía Hotmart</span>
       </div>
-
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1.05rem;padding:1rem 2.5rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4);letter-spacing:0.02em">¡Quiero comprar de forma segura!</a>
-
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1rem;padding:0.9rem 2rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4)">¡Quiero comprar de forma segura!</a>
     </div>
   </div>
 </div>
