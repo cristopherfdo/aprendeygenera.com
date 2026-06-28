@@ -21,7 +21,7 @@
   --text-muted:#6B6459;
   --border:#E8DDD0;
 }
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden;max-width:100vw}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
 
 /* ======= HERO ======= */
 .hero{
@@ -222,18 +222,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.25)}
   .bonos-total{flex-direction:column;text-align:center}
   .bonos-total-price{text-align:center}
 }
-
-/* MOBILE OVERFLOW FIX */
-*{max-width:100%;box-sizing:border-box}
-img,svg,video,iframe{max-width:100%}
-@media(max-width:600px){
-  .excusa-card{flex-direction:column;gap:0.75rem}
-  .bt-row{grid-template-columns:1fr 1fr!important}
-  .modulos-grid{grid-template-columns:1fr!important}
-  .testimonios-grid{grid-template-columns:1fr!important}
-  .tecnicas-grid{grid-template-columns:repeat(2,1fr)!important}
-  section, div[style*="max-width"]{padding-left:1rem!important;padding-right:1rem!important}
-}
 @keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
 
 /* SI CARDS */
@@ -318,18 +306,6 @@ img,svg,video,iframe{max-width:100%}
 .faq-a{display:none;padding:0 1.4rem 1.1rem;font-size:0.88rem;color:#5A3A5A;line-height:1.7}
 .faq-item.open .faq-a{display:block}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
-
-/* MOBILE OVERFLOW FIX */
-*{max-width:100%;box-sizing:border-box}
-img,svg,video,iframe{max-width:100%}
-@media(max-width:600px){
-  .excusa-card{flex-direction:column;gap:0.75rem}
-  .bt-row{grid-template-columns:1fr 1fr!important}
-  .modulos-grid{grid-template-columns:1fr!important}
-  .testimonios-grid{grid-template-columns:1fr!important}
-  .tecnicas-grid{grid-template-columns:repeat(2,1fr)!important}
-  section, div[style*="max-width"]{padding-left:1rem!important;padding-right:1rem!important}
-}
 @keyframes fadeHint{0%{opacity:1}70%{opacity:1}100%{opacity:0;pointer-events:none}}
 
 /* CARRUSEL TESTIMONIOS */
@@ -338,13 +314,6 @@ img,svg,video,iframe{max-width:100%}
 .carousel-track{display:flex;transition:transform 0.45s cubic-bezier(.4,0,.2,1);gap:16px}
 .carousel-slide{flex:0 0 calc(33.333% - 11px);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(45,27,53,0.15);border:1px solid #EDD5E8}
 .carousel-slide img{width:100%;aspect-ratio:9/19;object-fit:cover;display:block;border-radius:14px}
-@media(max-width:640px){
-  .carousel-slide img{
-    aspect-ratio:9/16!important;
-    object-fit:cover!important;
-    border-radius:14px;
-  }
-}
 .car-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid #B5357A;background:#FAF0F8;color:#B5357A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;z-index:2}
 .car-btn:hover{background:#B5357A;color:#fff}
 .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:1rem}
@@ -358,15 +327,6 @@ img,svg,video,iframe{max-width:100%}
 /* BONOS TABLA */
 .bonos-tabla{border:1px solid #EDD5E8;border-radius:16px;overflow:hidden;margin-bottom:2rem}
 .bt-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:1px solid #EDD5E8}
-@media(max-width:600px){
-  .bt-row{grid-template-columns:1fr 1fr!important}
-  .bt-img img{height:110px!important}
-  .bt-txt{padding:0.6rem 0.75rem!important}
-  .bt-nombre{font-size:0.75rem!important}
-  .bt-desc{display:none}
-  .bt-price s{font-size:10px!important}
-  .bt-gratis{font-size:11px!important}
-}
 .bt-row:last-child{border-bottom:none}
 .bt-img{background:#FAF0F8;display:flex;align-items:center;justify-content:center;padding:0;border-right:1px solid #EDD5E8;min-height:140px}
 .bt-img img{width:100%;height:140px;object-fit:contain;display:block;background:#FAF0F8;padding:6px}
@@ -390,43 +350,6 @@ img,svg,video,iframe{max-width:100%}
 
 .gar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 @media(max-width:700px){.gar-grid{grid-template-columns:1fr}}
-
-/* ES PARA TI */
-.spt-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
-.spt-card{
-  background:#FFFEF9;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:1rem 1.1rem;
-  display:flex;align-items:center;gap:12px;
-}
-.spt-check{
-  width:28px;height:28px;
-  background:linear-gradient(135deg,#B5357A,#D4608E);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-  color:#fff;font-size:13px;font-weight:900;
-}
-.spt-card p{
-  font-size:0.88rem;color:#2C1A2E;
-  line-height:1.45;margin:0;
-}
-@media(max-width:600px){
-  .spt-grid{grid-template-columns:1fr}
-  .spt-card{padding:0.9rem 1rem}
-  .spt-card p{font-size:0.92rem}
-}
-@media(max-width:640px){
-  /* Diploma cuadrado en móvil */
-  .diploma-wrap{max-width:100%!important;border-radius:10px}
-  .diploma-inner{padding:1.25rem 1rem!important}
-  .diploma-inner h1{font-size:1.6rem!important}
-  .diploma-nombre{font-size:1.6rem!important}
-  .diploma-firmas{gap:0.5rem!important}
-  .diploma-firma-text{min-width:80px!important;font-size:1.1rem!important}
-  .diploma-wave{height:40px!important;margin:-1.25rem -1rem -1.25rem!important}
-}
 </style>
 </head>
 <body>
@@ -651,7 +574,7 @@ img,svg,video,iframe{max-width:100%}
       </div>
     </div>
     <div style="text-align:center;margin-top:2rem">
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block;white-space:normal;text-align:center;max-width:100%;padding:1rem 1.5rem;line-height:1.4">¡Quiero empezar ahora! →</a>
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">¡No tengo estas excusas, quiero empezar! →</a>
     </div>
   </div>
 </div>
@@ -668,26 +591,26 @@ img,svg,video,iframe{max-width:100%}
       <button class="car-btn car-prev" onclick="moveCarousel(-1)" aria-label="Anterior">&#8592;</button>
       <div class="carousel-track-container">
         <div class="carousel-track" id="testimonios-track">
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-0067917.png?format=webp" alt="Testimonio alumna 1" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0067563.png?format=webp" alt="Testimonio alumna 2" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-5-0068143.png?format=webp" alt="Testimonio alumna 3" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0071204.png?format=webp" alt="Testimonio alumna 4" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0070794.png?format=webp" alt="Testimonio alumna 5" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-0162555.png?format=webp" alt="Testimonio alumna 6" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-5-0162647.png?format=webp" alt="Testimonio alumna 7" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0162787.png?format=webp" alt="Testimonio alumna 8" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-7-0162880.png?format=webp" alt="Testimonio alumna 9" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-8-0163041.png?format=webp" alt="Testimonio alumna 10" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-10-0163166.png?format=webp" alt="Testimonio alumna 11" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-11-0164546.png?format=webp" alt="Testimonio alumna 12" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0344156.png?format=webp" alt="Testimonio alumna 13" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0169876.png?format=webp" alt="Testimonio alumna 14" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-3515894.png?format=webp" alt="Testimonio alumna 15" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-0541708.png?format=webp" alt="Testimonio alumna 16" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-2-3516140.png?format=webp" alt="Testimonio alumna 17" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/ACTUALIZACIONES-0167433.png?format=webp" alt="Testimonio alumna 18" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-6-0068426.png?format=webp" alt="Testimonio alumna 19" loading="lazy"></div>
-      <div class="carousel-slide"><img src="https://content.app-sources.com/s/117079833320225811/thumbnails/640x480/Descargado/Diseno_sin_titulo-8-0070989.png?format=webp" alt="Testimonio alumna 20" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1L9zF_u8ZeUELejwMTvjpuuF92qgNTMLQ" alt="Testimonio IMG_6298" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1EVoQoIooo-Kouzos66ytAu1N0WZwwDp_" alt="Testimonio IMG_6299" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/16wAJPvq04aXnlnZkB2wbI5J1cNLtkHuT" alt="Testimonio IMG_6300" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1rlPc575e7BHdc_eWxaImwVD4_awZKSLX" alt="Testimonio IMG_6301" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1_n8Fa9IJtRMuLHcG3gOKlGG4heLJNh4R" alt="Testimonio IMG_6302" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1cJsBibCXm0dVL-jJOq6hWkSsCs63arHe" alt="Testimonio IMG_4413" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1r3bgO7IHyUiOX2rec20ntmgIhsGZKBO1" alt="Testimonio IMG_4415" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1xLYfYM0lFjGf-fdgV6ddrk9qoOfc2dc1" alt="Testimonio IMG_4416" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/13Wxerx_Q0Scn1U4Zryr323GgSQf90bw7" alt="Testimonio IMG_4417" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1hgBoK9tv2ztjj4RCzgymMPGFSLRz3jah" alt="Testimonio IMG_4418" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1tqMnObvR_bmHVEMRDZRb9lJBz07RkHFd" alt="Testimonio IMG_4419" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1DrQVu-WffA3MWXoELnxL3MfNvqgCWs4m" alt="Testimonio IMG_4422" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1GvHaNor22maf_7icCyg2r7Vn6ZNSxDCe" alt="Testimonio IMG_4421" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1BBIcjdsIE1vCVqJeOCKMpbUfmXPk6lyM" alt="Testimonio IMG_4424" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1b-798C1mmI5pmphUApEJPPRbvMPLTNL2" alt="Testimonio IMG_4425" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1RYsS-X1eONhCZ_bTgx7R6wL-4-h0_WcH" alt="Testimonio IMG_4426" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1DFMpm1ItclOiOtSnbNwrRwZAhIUv0ZQ9" alt="Testimonio IMG_4427" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Ro7zA7Rb4BESTlDUHJRs4Jc6mtZ6_5Wg" alt="Testimonio IMG_4428" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1jLZ1-jk-Jyf5sapT1yz4WVeX1pIFRKpq" alt="Testimonio IMG_4429" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/19QeI-1PQgy_-mJMitNxrFRfTNHmUpe_N" alt="Testimonio IMG_4423" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
         </div>
       </div>
       <button class="car-btn car-next" onclick="moveCarousel(1)" aria-label="Siguiente">&#8594;</button>
@@ -705,11 +628,11 @@ img,svg,video,iframe{max-width:100%}
     <h3 style="font-size:clamp(0.9rem,2vw,1.15rem);color:#2C1A2E;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2.5rem">Certificado personalizado con tu nombre!</h3>
 
     <!-- DIPLOMA HTML -->
-    <div class="diploma-wrap" style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
-      <div class="diploma-inner" style="border:1.5px solid #C9A84C;padding:2rem 1.5rem;position:relative;background:#fffdf5">
+    <div style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
+      <div style="border:1.5px solid #C9A84C;padding:2.5rem 3rem;position:relative;background:#fffdf5">
 
         <!-- Sello dorado premium -->
-        <div style="position:absolute;top:1rem;left:1.2rem;width:70px;height:70px">
+        <div style="position:absolute;top:1.2rem;left:1.8rem;width:90px;height:90px">
           <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="sg1" cx="40%" cy="35%" r="60%">
@@ -903,20 +826,21 @@ img,svg,video,iframe{max-width:100%}
   </div>
 </div>
 
-<!-- GARANTIA -->
+<!-- GARANTIA TRIPLE -->
 <div style="background:#0D0B14;padding:2.5rem 1.5rem;border-top:1px solid rgba(212,160,60,0.15);border-bottom:1px solid rgba(212,160,60,0.15);">
   <div style="max-width:680px;margin:0 auto">
     <div style="background:linear-gradient(135deg,#D4A843,#F0C860,#C9A030);padding:1rem 1.5rem;text-align:center;border-radius:12px 12px 0 0">
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:#1A0A00;font-weight:900;margin:0">Tu inversión está 100% protegida</h2>
     </div>
-    <div style="background:linear-gradient(160deg,#1A1010,#0D0808);border:1px solid rgba(212,160,60,0.2);border-radius:0 0 16px 16px;padding:1.75rem 1.5rem;text-align:center">
-      <p style="font-size:0.95rem;color:rgba(250,240,245,0.75);line-height:1.7;max-width:480px;margin:0 auto 1.25rem">
-        Si en los primeros <strong style="color:#D4A843">7 días</strong> el curso no cumple tus expectativas — ya sea por el contenido, el soporte o la plataforma — te devolvemos <strong style="color:#D4A843">cada peso</strong> sin preguntas.
+    <div style="background:linear-gradient(160deg,#1A1010,#0D0808);border:1px solid rgba(212,160,60,0.2);border-radius:0 0 16px 16px;padding:2rem 1.5rem;text-align:center">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#FAF0F5;margin:0 0 0.75rem;line-height:1.4">Garantía de satisfacción, soporte<br>y plataforma — 7 días</h3>
+      <p style="font-size:0.92rem;color:rgba(250,240,245,0.72);line-height:1.75;max-width:480px;margin:0 auto 1.25rem">
+        Si en los primeros <strong style="color:#D4A843">7 días</strong> sientes que el curso no cumplió tus expectativas — ya sea por el contenido, el soporte o la plataforma — te devolvemos <strong style="color:#D4A843">cada peso</strong> sin preguntas y sin complicaciones.
       </p>
-      <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Sin formularios</span>
-        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Devolución completa</span>
-        <span style="font-size:0.82rem;color:rgba(250,240,245,0.6);display:flex;align-items:center;gap:5px"><span style="color:#D4A843">✓</span> Vía Hotmart</span>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;max-width:340px;margin:0 auto 1.5rem;text-align:left">
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(250,240,245,0.65)"><span style="color:#D4A843;font-weight:700">✓</span> Sin preguntas ni formularios complicados</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(250,240,245,0.65)"><span style="color:#D4A843;font-weight:700">✓</span> Devolución completa — no parcial</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(250,240,245,0.65)"><span style="color:#D4A843;font-weight:700">✓</span> Procesado a través de Hotmart de forma segura</div>
       </div>
       <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" style="display:inline-block;background:linear-gradient(135deg,#E74C3C,#FF6B5B);color:#fff;font-weight:800;font-size:1rem;padding:0.9rem 2rem;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(231,76,60,0.4)">¡Quiero comprar de forma segura!</a>
     </div>
