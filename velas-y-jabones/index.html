@@ -419,6 +419,36 @@ html, body {
     gap:0.75rem!important;
   }
 }
+
+@media(max-width:700px){
+  /* Sección CTA final — quitar padding lateral excesivo */
+  #cta{padding-left:1rem!important;padding-right:1rem!important}
+  /* Recuadro precio */
+  #cta > div > div[style*="background:rgba(255,255,255,0.05)"]{
+    width:calc(100% - 0px)!important;
+    max-width:100%!important;
+    padding:1.25rem 1rem!important;
+  }
+  /* Precio US$35 */
+  #cta div[style*="font-size:4.5rem"],
+  #cta div[style*="font-size:clamp"]{
+    font-size:3rem!important;
+  }
+  /* Botón inscribirme */
+  #cta .btn-hero{
+    display:block!important;
+    width:100%!important;
+    font-size:1rem!important;
+    padding:1rem!important;
+    white-space:normal!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+  }
+  /* Botón excusas */
+  .excusa-btn-wrap{padding:0 1rem}
+  /* Trust bar final */
+  #cta .trust-items{flex-direction:column!important;align-items:flex-start!important;gap:0.5rem!important}
+}
 </style>
 </head>
 <body>
@@ -643,7 +673,7 @@ html, body {
       </div>
     </div>
     <div style="text-align:center;margin-top:2rem">
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">¡No tengo estas excusas, quiero empezar! →</a>
+      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:block;width:calc(100% - 3rem);max-width:500px;margin:0 auto;text-align:center;white-space:normal;line-height:1.4;padding:1rem 1.5rem">¡No tengo estas excusas, quiero empezar! →</a>
     </div>
   </div>
 </div>
@@ -935,7 +965,7 @@ html, body {
 </div>
 
 <!-- CTA FINAL -->
-<div id="cta" style="background:linear-gradient(160deg,#2D1B35,#1A0D22);padding:5rem 1.5rem;text-align:center;">
+<div id="cta" style="overflow:hidden" style="background:linear-gradient(160deg,#2D1B35,#1A0D22);padding:5rem 1.5rem;text-align:center;">
   <div style="max-width:700px;margin:0 auto">
     <div class="section-label" style="color:#E8A8C8">Tu momento es ahora</div>
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:#FAF0F5;line-height:1.2;margin-bottom:1rem">Tu negocio<br><em style="color:#E890BE">empieza hoy</em></h2>
