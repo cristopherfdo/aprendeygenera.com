@@ -507,6 +507,40 @@ html, body {
     min-width:80px!important;
   }
 }
+.countdown-wrap{
+  text-align:center;
+  background:rgba(255,80,80,0.1);
+  border:1px solid rgba(255,100,100,0.3);
+  border-radius:10px;
+  padding:0.6rem 1.2rem;
+  margin-bottom:0.75rem;
+}
+.countdown-label{
+  font-size:0.75rem;font-weight:700;
+  color:#FF9090;letter-spacing:0.04em;
+  text-transform:uppercase;margin-bottom:0.35rem;
+}
+.countdown-timer{
+  display:flex;align-items:center;justify-content:center;gap:0.4rem;
+}
+.countdown-block{
+  display:flex;flex-direction:column;align-items:center;
+  background:rgba(255,255,255,0.08);
+  border-radius:6px;padding:0.3rem 0.7rem;
+  min-width:52px;
+}
+.countdown-block span{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;color:#fff;font-weight:700;line-height:1;
+}
+.countdown-block small{
+  font-size:0.65rem;color:rgba(255,200,200,0.6);
+  text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;
+}
+.countdown-sep{
+  font-size:1.6rem;color:#FF9090;font-weight:700;line-height:1;
+  margin-bottom:8px;
+}
 </style>
   <!-- Meta Pixel Code -->
 <script>
@@ -553,6 +587,16 @@ src="https://www.facebook.com/tr?id=1020510924068042&ev=PageView&noscript=1"
         <div class="price-note">✅ 3 cursos completos<br>✅ 16 bonos gratis<br>✅ Acceso de por vida</div>
       </div>
       <div class="hero-cta-right">
+        <div class="countdown-wrap">
+          <div class="countdown-label">⚡ Oferta especial termina en:</div>
+          <div class="countdown-timer">
+            <div class="countdown-block"><span id="cd-hr">01</span><small>hr</small></div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-block"><span id="cd-min">00</span><small>min</small></div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-block"><span id="cd-sec">00</span><small>seg</small></div>
+          </div>
+        </div>
         <button class="btn-hero" onclick="window.open('https://go.hotmart.com/B106162905Y?ap=e5ca','_blank')">🎉 Quiero inscribirme ahora</button>
         <p class="hero-guarantee">🔒 Garantía 7 días · Pago 100% seguro · Acceso inmediato</p>
       </div>
@@ -571,21 +615,6 @@ src="https://www.facebook.com/tr?id=1020510924068042&ev=PageView&noscript=1"
   </div>
 </div>
 
-<!-- PARA QUIEN ES -->
-<div style="background:#FAF0F8;padding:3.5rem 1.5rem;border-bottom:1px solid #EDD5E8;">
-  <div style="max-width:900px;margin:0 auto;text-align:center;margin-bottom:2rem">
-    <div class="section-label">¿Es para ti?</div>
-    <h2 class="section-title">Este curso es para ti si…</h2>
-  </div>
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-    <div class="si-card"><span class="si-icon">✅</span><p>Quieres generar ingresos desde casa haciendo algo creativo y propio</p></div>
-    <div class="si-card"><span class="si-icon">✅</span><p>Eres principiante total y quieres aprender desde cero, paso a paso, sin perderte</p></div>
-    <div class="si-card"><span class="si-icon">✅</span><p>Buscas un negocio rentable con baja inversión inicial y alta demanda todo el año</p></div>
-    <div class="si-card"><span class="si-icon">✅</span><p>Ya tienes algo de experiencia y quieres técnicas avanzadas para diferenciarte</p></div>
-    <div class="si-card"><span class="si-icon">✅</span><p>Quieres aprender a empacar, poner precio y vender tus productos en redes sociales</p></div>
-    <div class="si-card"><span class="si-icon">✅</span><p>Sueñas con tener tu propia marca artesanal y no saber cómo empezar</p></div>
-  </div>
-</div>
 
 <!-- GALERIA VELAS -->
 <div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
@@ -668,13 +697,14 @@ src="https://www.facebook.com/tr?id=1020510924068042&ev=PageView&noscript=1"
   </div>
 </div>
 
+
 <!-- PLAN DE ESTUDIOS -->
 <div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
   <div style="max-width:900px;margin:0 auto">
     <div style="text-align:center;margin-bottom:2.5rem">
       <div class="section-label">Plan de estudios</div>
-      <h2 class="section-title">📚 Más de <em>120 clases · 21 horas</em> de contenido</h2>
-      <p class="section-sub" style="margin:0 auto">Organizado en módulos progresivos. Avanzas a tu ritmo, desde cero hasta experta.</p>
+      <h2 class="section-title">📚 Tu camino completo: <em>de los materiales a tu primera venta</em></h2>
+      <p class="section-sub" style="margin:0 auto">Aprende a tu ritmo, sin frustrarte — todo organizado para que avances desde el primer día.</p>
     </div>
 
     <!-- TABS -->
@@ -710,43 +740,11 @@ src="https://www.facebook.com/tr?id=1020510924068042&ev=PageView&noscript=1"
     <div id="tab-negocio" class="tab-content" style="display:none">
       <div class="modulos-grid">
         <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Experiencia de Usuario</span></div><ul class="mod-list"><li>Cómo empacar tus productos</li><li>Embalaje para tus productos</li></ul></div>
-        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Domina tus Finanzas</span></div><ul class="mod-list"><li>Calculadora de costos y presupuesto de velas artesanales</li><li>Calculadora de costos y presupuesto de jabones artesanales</li><li>Tu ruta a la rentabilidad — conoce tu punto de equilibrio</li><li>Finanzas para la vida — estrategias financieras para emprendedoras</li></ul></div>
-        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Emprendimiento Digital</span></div><ul class="mod-list"><li>¡Comienza la aventura! Presentación</li><li>Encuentra tu oportunidad — investigación de mercado</li><li>Crea tu negocio digital (Facebook, Instagram, TikTok)</li><li>Diseña tu marca única — construcción de identidad visual</li><li>Vende con estilo — portafolio, etiquetas y mensaje de marca</li><li>Vende con éxito — estrategias de cierre efectivo</li></ul></div>
-        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Emprendimiento Físico</span></div><ul class="mod-list"><li>¡Hazte visible! — configura tu negocio en Google Maps</li><li>Crea una identidad visual atractiva para tu negocio físico</li><li>Técnicas de atención al cliente</li><li>Proyecta confianza y profesionalismo con tu cliente</li><li>Estrategias comerciales para triunfar</li></ul></div>
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Fijación de Precios</span></div><ul class="mod-list"><li>Costos fijos y variables</li><li>Cómo calcular tu precio de venta</li><li>Margen de ganancia</li></ul></div>
+        <div class="modulo-card neg"><div class="mod-header"><span class="mod-num">Módulo</span><span class="mod-title">Marca y Redes Sociales</span></div><ul class="mod-list"><li>Cómo crear tu marca personal</li><li>Fotografía de productos</li><li>Instagram y TikTok para vender</li><li>Tus primeras clientas</li></ul></div>
       </div>
     </div>
 
-    <div style="height:2rem"></div>
-<!-- EXCUSAS -->
-<div style="background:linear-gradient(135deg,#2D1B35,#1A0D22);padding:4rem 1.5rem;border-bottom:1px solid #3D2545;">
-  <div style="max-width:860px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <div class="section-label" style="color:#E8A8C8">Las 3 excusas que te frenan</div>
-      <h2 class="section-title" style="color:#FAF0F5">No dejes que estas ideas te roben <em>tu oportunidad</em></h2>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:1.25rem">
-      <div class="excusa-card">
-        <div class="excusa-x">✗</div>
-        <div>
-          <div class="excusa-mito">"No tengo tiempo suficiente para un curso"</div>
-          <div class="excusa-resp">El curso es 100% en línea y flexible. Dedicando solo 20-30 minutos al día avanzas a tu ritmo. Tienes acceso de por vida — sin fechas límite ni horarios fijos.</div>
-        </div>
-      </div>
-      <div class="excusa-card">
-        <div class="excusa-x">✗</div>
-        <div>
-          <div class="excusa-mito">"No soy creativa para hacer velas o jabones"</div>
-          <div class="excusa-resp">El curso está diseñado para principiantes absolutas. No necesitas talento previo — solo seguir el paso a paso. Miles de alumnas sin experiencia hoy tienen su propio negocio.</div>
-        </div>
-      </div>
-      <div class="excusa-card">
-        <div class="excusa-x">✗</div>
-        <div>
-          <div class="excusa-mito">"Puedo aprender gratis en YouTube"</div>
-          <div class="excusa-resp">Los tutoriales sueltos no te dan estructura, ni comunidad, ni módulo de emprendimiento, ni certificado, ni lista de proveedores. Aquí tienes todo organizado para que pases de aprender a vender.</div>
-        </div>
-      </div>
-    </div>
     <div style="text-align:center;margin-top:2rem;padding:0 1.5rem">
       <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block;max-width:100%;white-space:normal;line-height:1.5;padding:1rem 2rem;text-align:center">Estoy lista — quiero empezar hoy 🕯️</a>
     </div>
@@ -794,138 +792,6 @@ src="https://www.facebook.com/tr?id=1020510924068042&ev=PageView&noscript=1"
 </div>
 
 
-<!-- CERTIFICADO -->
-<div class="cert-section" style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;text-align:center">
-  <div style="max-width:860px;margin:0 auto">
-    <div class="section-label">Bonus incluido</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#C0392B;font-weight:900;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:0.3rem">¡Además podrás reclamar tu</h2>
-    <h3 style="font-size:clamp(0.9rem,2vw,1.15rem);color:#2C1A2E;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2.5rem">Certificado personalizado con tu nombre!</h3>
-
-    <!-- DIPLOMA HTML -->
-    <div style="max-width:740px;margin:0 auto;border:3px solid #C9A84C;border-radius:4px;padding:10px;background:#fffdf5;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
-      <div style="border:1.5px solid #C9A84C;padding:2.5rem 3rem;position:relative;background:#fffdf5">
-
-        <!-- Sello dorado premium -->
-        <div style="position:absolute;top:clamp(0.5rem,2vw,1.2rem);left:clamp(0.5rem,2vw,1.8rem);width:clamp(50px,8vw,90px);height:clamp(50px,8vw,90px)">
-          <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="sg1" cx="40%" cy="35%" r="60%">
-                <stop offset="0%" stop-color="#FFF0A0"/>
-                <stop offset="30%" stop-color="#F0C030"/>
-                <stop offset="65%" stop-color="#B8860B"/>
-                <stop offset="100%" stop-color="#8B6010"/>
-              </radialGradient>
-              <radialGradient id="sg2" cx="40%" cy="35%" r="60%">
-                <stop offset="0%" stop-color="#FFF8C0"/>
-                <stop offset="40%" stop-color="#E8B820"/>
-                <stop offset="100%" stop-color="#9A7010"/>
-              </radialGradient>
-              <radialGradient id="sg3" cx="45%" cy="40%" r="55%">
-                <stop offset="0%" stop-color="#FFFAD0"/>
-                <stop offset="50%" stop-color="#D4A017"/>
-                <stop offset="100%" stop-color="#7A5500"/>
-              </radialGradient>
-              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#6B4400" flood-opacity="0.5"/>
-              </filter>
-            </defs>
-
-            <!-- Cintas -->
-            <polygon points="38,78 44,95 50,88 56,95 62,78" fill="#C9A030"/>
-            <polygon points="40,78 44,92 50,86 56,92 60,78" fill="#E8C040"/>
-            <line x1="50" y1="78" x2="50" y2="95" stroke="#A07820" stroke-width="0.5"/>
-
-            <!-- Corona de rayos externos -->
-            <g filter="url(#shadow)">
-              <!-- 24 puntas alternando largo y corto -->
-              <polygon points="50,5 52.5,16 55,5" fill="url(#sg1)"/>
-              <polygon points="50,5 47.5,16 45,5" fill="url(#sg1)"/>
-              <polygon points="63,8 61,19 66,11" fill="url(#sg1)"/>
-              <polygon points="37,8 39,19 34,11" fill="url(#sg1)"/>
-              <polygon points="73,17 67,26 75,22" fill="url(#sg1)"/>
-              <polygon points="27,17 33,26 25,22" fill="url(#sg1)"/>
-              <polygon points="80,28 71,34 82,33" fill="url(#sg1)"/>
-              <polygon points="20,28 29,34 18,33" fill="url(#sg1)"/>
-              <polygon points="84,41 74,43 86,46" fill="url(#sg1)"/>
-              <polygon points="16,41 26,43 14,46" fill="url(#sg1)"/>
-              <polygon points="84,55 74,53 85,59" fill="url(#sg1)"/>
-              <polygon points="16,55 26,53 15,59" fill="url(#sg1)"/>
-              <polygon points="79,67 71,62 78,71" fill="url(#sg1)"/>
-              <polygon points="21,67 29,62 22,71" fill="url(#sg1)"/>
-              <polygon points="70,76 65,68 67,79" fill="url(#sg1)"/>
-              <polygon points="30,76 35,68 33,79" fill="url(#sg1)"/>
-            </g>
-
-            <!-- Anillo exterior -->
-            <circle cx="50" cy="44" r="34" fill="url(#sg1)" filter="url(#shadow)"/>
-            <!-- Anillo medio highlight -->
-            <circle cx="50" cy="44" r="34" fill="none" stroke="#FFF8A0" stroke-width="1.2" opacity="0.6"/>
-            <!-- Anillo decorativo dentado -->
-            <circle cx="50" cy="44" r="30" fill="url(#sg2)"/>
-            <!-- Borde dentado interior simulado -->
-            <circle cx="50" cy="44" r="30" fill="none" stroke="#7A5500" stroke-width="0.8" stroke-dasharray="2.5,1.5"/>
-            <!-- Círculo interior -->
-            <circle cx="50" cy="44" r="25" fill="url(#sg3)"/>
-            <!-- Línea circular fina interior -->
-            <circle cx="50" cy="44" r="22" fill="none" stroke="#FFF0A0" stroke-width="0.7" opacity="0.8"/>
-
-            <!-- Corona pequeña top -->
-            <polygon points="50,24 52,29 57,29 53,32 55,37 50,34 45,37 47,32 43,29 48,29" fill="#7A5500" opacity="0.9"/>
-
-            <!-- Estrellas -->
-            <text x="50" y="46" text-anchor="middle" font-size="7" fill="#4A3000" font-family="serif" font-weight="bold" opacity="0.9">★ ★ ★</text>
-            <text x="50" y="56" text-anchor="middle" font-size="5.5" fill="#4A3000" font-family="serif" letter-spacing="1">CERTIFICADO</text>
-
-            <!-- Highlight superior para efecto 3D -->
-            <ellipse cx="44" cy="32" rx="10" ry="6" fill="white" opacity="0.15"/>
-          </svg>
-        </div>
-
-        <!-- Texto del diploma -->
-        <div style="text-align:center">
-          <p style="font-size:0.78rem;letter-spacing:0.12em;color:#3A2A0A;text-transform:uppercase;margin-bottom:0.2rem;font-weight:600">Academia Virtual Manitas Creativas</p>
-          <p style="font-size:0.72rem;letter-spacing:0.1em;color:#5A4A2A;text-transform:uppercase;margin-bottom:1.2rem">Otorga el presente</p>
-
-          <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,6vw,3.2rem);color:#1A0A00;letter-spacing:0.06em;margin-bottom:1rem;font-weight:900">CERTIFICADO</h1>
-
-          <p style="font-size:0.75rem;letter-spacing:0.14em;color:#5A4A2A;text-transform:uppercase;margin-bottom:0.5rem">Finalización a</p>
-
-          <p style="font-family:'Dancing Script',cursive;font-size:clamp(1.2rem,5vw,2.8rem);color:#1A0A00;margin-bottom:1.2rem;border-bottom:1px solid #C9A84C;padding-bottom:0.75rem;max-width:400px;margin-left:auto;margin-right:auto">Tu nombre Aquí</p>
-
-          <p style="font-size:0.72rem;letter-spacing:0.1em;color:#3A2A0A;text-transform:uppercase;margin-bottom:2rem">Por haber cumplido satisfactoriamente el curso de velas y<br>jabones artesanales</p>
-
-          <!-- Firmas -->
-          <div style="display:flex;justify-content:space-around;align-items:flex-end;margin-top:1rem">
-            <div style="text-align:center">
-              <div style="font-family:'Dancing Script',cursive;font-size:1.6rem;color:#1A0A00;border-bottom:1px solid #C9A84C;padding-bottom:0.25rem;margin-bottom:0.4rem;min-width:120px">Laura S.</div>
-              <p style="font-size:0.7rem;font-weight:700;color:#3A2A0A;text-transform:uppercase;letter-spacing:0.06em">Laura Salamanca</p>
-              <p style="font-size:0.65rem;color:#7A6A4A">Tutora</p>
-            </div>
-            <div style="text-align:center">
-              <div style="font-family:'Dancing Script',cursive;font-size:1.6rem;color:#1A0A00;border-bottom:1px solid #C9A84C;padding-bottom:0.25rem;margin-bottom:0.4rem;min-width:120px">A. Bedoya</div>
-              <p style="font-size:0.7rem;font-weight:700;color:#3A2A0A;text-transform:uppercase;letter-spacing:0.06em">Andres Bedoya</p>
-              <p style="font-size:0.65rem;color:#7A6A4A">Tutor</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ola decorativa inferior -->
-        <div style="margin:-2.5rem -3rem -2.5rem;margin-top:1.5rem;height:55px;overflow:hidden">
-          <svg viewBox="0 0 740 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%">
-            <path d="M0,20 Q185,55 370,25 Q555,-5 740,30 L740,55 L0,55 Z" fill="#C9A84C"/>
-            <path d="M0,30 Q185,65 370,35 Q555,5 740,40 L740,55 L0,55 Z" fill="#8B6010"/>
-            <path d="M0,40 Q185,70 370,45 Q555,15 740,50 L740,55 L0,55 Z" fill="#5A3A00"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <p style="margin-top:1.5rem;font-size:0.95rem;color:#5A3A5A;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7">Al completar el curso recibirás tu <strong>certificado internacional personalizado</strong> con tu nombre, firmado por tus tutores.</p>
-    <div style="margin-top:1.75rem">
-      <a href="https://go.hotmart.com/B106162905Y?ap=e5ca" class="btn-hero" style="display:inline-block">🎓 Quiero mi certificado →</a>
-    </div>
-  </div>
-</div>
 
 <!-- BONOS -->
 <div style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #EDD5E8;">
@@ -1144,6 +1010,32 @@ function showTab(tab, btn){
   document.getElementById('tab-'+tab).style.display='block';
   btn.classList.add('active');
 }
+</script>
+<script>
+(function(){
+  var total = 60 * 60; // 60 minutos
+  var key = 'ayg_cd_end';
+  var stored = localStorage.getItem(key);
+  var end;
+  if(stored){
+    end = parseInt(stored);
+    if(Date.now() > end){ end = Date.now() + total*1000; localStorage.setItem(key, end); }
+  } else {
+    end = Date.now() + total*1000;
+    localStorage.setItem(key, end);
+  }
+  function update(){
+    var diff = Math.max(0, Math.floor((end - Date.now())/1000));
+    var h = Math.floor(diff/3600);
+    var m = Math.floor((diff%3600)/60);
+    var s = diff % 60;
+    document.getElementById('cd-hr').textContent = h < 10 ? '0'+h : h;
+    document.getElementById('cd-min').textContent = m < 10 ? '0'+m : m;
+    document.getElementById('cd-sec').textContent = s < 10 ? '0'+s : s;
+    if(diff > 0){ setTimeout(update, 1000); }
+  }
+  update();
+})();
 </script>
 </body>
 </html>
